@@ -1,0 +1,2 @@
+# chin-music
+Music blog
