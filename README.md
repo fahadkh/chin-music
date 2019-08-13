@@ -6,7 +6,7 @@ Project for learning some new tech for web dev. Hopefully will also actually be 
 
 Backend: Some js lib? Flask? Clojure?
 
-Frontend: React + typescript
+Frontend: React (hooks!) + typescript, maybe some clojurescript
 
 Communication: gRAphQl
 
