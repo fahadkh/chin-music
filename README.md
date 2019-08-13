@@ -13,3 +13,6 @@ Communication: gRAphQl
 Deploy: I have an aws account.., TravisCI?, Docker, Kubernetes, Heroku?
 
 Data Store: Maybe something nosql or easy to do with JS, postgres, elasticsearch for indexing/search of tags/album names
+
+### Content
+Courtesy of Phil D.
