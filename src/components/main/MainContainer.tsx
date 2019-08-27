@@ -5,10 +5,13 @@ import { ITheme } from '../../Theme';
 
 const useStyles = createUseStyles<ITheme, string>((theme) => ({
   root: {
-    color: theme.text.primary    
+    color: theme.text.primary,
+    height: "100vh"
   },
-  main: {
-    color: theme.palette.primary
+  mainHighlight: {
+    background: "url(https://media.giphy.com/media/dXjGULkvn0fElO2WuJ/giphy.gif) no-repeat center center fixed",
+    backgroundSize: "cover",
+    height: "100%"
   }
 }))
 
@@ -20,7 +23,7 @@ const MainContainer: React.FC<IMainProps> = (props) => {
     return (
 
       <div className={classes.root}>
-        Some dope content
+        <div className={classes.mainHighlight}></div>
       </div>
 
     )

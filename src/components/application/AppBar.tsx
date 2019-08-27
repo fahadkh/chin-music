@@ -6,21 +6,31 @@ import { ITheme } from '../../Theme';
 const useStyles = createUseStyles<ITheme, string>((theme) => ({
   root: {
     display: "flex",
-    height: theme.spacing * 8,
-    boxShadow: "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12)",
-    paddingLeft: theme.spacing * 4,
-    paddingRight: theme.spacing * 4,
-    backgroundColor: theme.palette.primary
+    justifyContent: "center",
+    height: theme.appBarHeight,
+    width: "100%",
+    backgroundColor: `${theme.colors.black}90`,
+    position: "absolute"
   },
   header: {
-
+    display: "flex",
+    alignSelf: "center",
+    width: "80%",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   logo: {
     alignSelf: "center",
     color: theme.text.primary,
-    fontSize: 28,
+    fontSize: 40,
     fontWeight: 500,
     fontFamily: "Permanent Marker"
+  },
+  '@media (max-width: 768px)': {
+    header: {
+      width: 750,
+      marginLeft: theme.spacing * 2
+    }
   }
 }))
 
@@ -30,8 +40,10 @@ const AppBar: React.FC<IAppBarProps> = (props) => {
     return (
 
         <div className={classes.root}>
-          <div className={classes.logo}>
-            ChinMusicReviews
+          <div className={classes.header}>
+            <div className={classes.logo}>
+              ChinMusic
+            </div>
           </div>
         </div>
 
