@@ -12,20 +12,21 @@ const useStyles = createUseStyles<ITheme, string>((theme) => ({
   }
 }))
 
-const Router: React.FC<IRouterProps> = (props) => {
+const MainContainer: React.FC<IMainProps> = (props) => {
     const classes = useStyles(props)
+
+    // TODO: Fetch featured gif and article links
 
     return (
 
-        <div className={classes.root}>
-          <div className={classes.main}>
-            Responsible for routing
-          </div>
-        </div>
+      <div className={classes.root}>
+        Some dope content
+      </div>
 
     )
 }
 
-export interface IRouterProps { }
+export interface IMainProps { 
+}
 
-export default Router
+export default MainContainer

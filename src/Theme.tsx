@@ -1,14 +1,16 @@
 export const theme: ITheme = {
   palette: {
-    primary: "#1abc9c",
+    primary: "#2a363b",
     secondary: "#34495e"
   },
   text: {
-    primary: "#000",
+    primary: "#fff",
     secondary: "#666"
   },
   spacing: 8
 }
+
+//#2a363b
 
 export interface ITheme {
   palette: IPalette
