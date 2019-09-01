@@ -776,14 +776,6 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-transform-typescript" "^7.3.2"
 
-"@babel/runtime@7.0.0-beta.42":
-  version "7.0.0-beta.42"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@babel/runtime/-/runtime-7.0.0-beta.42.tgz#352e40c92e0460d3e82f49bd7e79f6cda76f919f"
-  integrity sha1-NS5AyS4EYNPoL0m9fnn2zadvkZ8=
-  dependencies:
-    core-js "^2.5.3"
-    regenerator-runtime "^0.11.1"
-
 "@babel/runtime@7.5.5", "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.3.4", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.5.5":
   version "7.5.5"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
@@ -824,14 +816,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@blueprintjs/icons@^3.2.0":
-  version "3.10.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@blueprintjs/icons/-/icons-3.10.0.tgz#45cdb3ca62110e74bcf9e741237a6b4e2cf2c3a4"
-  integrity sha1-Rc2zymIRDnS8+edBI3prTizyw6Q=
-  dependencies:
-    classnames "^2.2"
-    tslib "~1.9.0"
-
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@cnakazawa/watch/-/watch-1.0.3.tgz#099139eaec7ebf07a27c1786a3ff64f39464d2ef"
@@ -849,11 +833,6 @@
   version "9.0.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@csstools/normalize.css/-/normalize.css-9.0.1.tgz#c27b391d8457d1e893f1eddeaf5e5412d12ffbb5"
   integrity sha1-wns5HYRX0eiT8e3er15UEtEv+7U=
-
-"@emotion/hash@^0.6.5":
-  version "0.6.6"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/@emotion/hash/-/hash-0.6.6.tgz#62266c5f0eac6941fece302abad69f2ee7e25e44"
-  integrity sha1-YiZsXw6saUH+zjAqutafLufiXkQ=
 
 "@emotion/is-prop-valid@^0.7.3":
   version "0.7.3"
@@ -1727,7 +1706,7 @@ arrify@^1.0.1:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
   integrity sha1-iYUI2iIm84DfkEcoRWhJwVAaSw0=
 
-asap@~2.0.3, asap@~2.0.6:
+asap@~2.0.6:
   version "2.0.6"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46"
   integrity sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=
@@ -2068,11 +2047,6 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha1-aN/1++YMUes3cl6p4+0xDcwed24=
-
-bowser@^1.7.3:
-  version "1.9.4"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/bowser/-/bowser-1.9.4.tgz#890c58a2813a9d3243704334fa81b96a5c150c9a"
-  integrity sha1-iQxYooE6nTJDcEM0+oG5alwVDJo=
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -2443,11 +2417,6 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2, classnames@^2.2.6:
-  version "2.2.6"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
-  integrity sha1-Q5Nb/90pHzJtrQogUwmzjQD2UM4=
-
 clean-css@4.2.x:
   version "4.2.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
@@ -2729,12 +2698,7 @@ core-js@3.1.4:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/core-js/-/core-js-3.1.4.tgz#3a2837fc48e582e1ae25907afcd6cf03b0cc7a07"
   integrity sha1-Oig3/EjlguGuJZB6/NbPA7DMegc=
 
-core-js@^1.0.0:
-  version "1.2.7"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
-  integrity sha1-ZSKUwUZR2yj6k70tX/KYOk8IxjY=
-
-core-js@^2.4.0, core-js@^2.5.3:
+core-js@^2.4.0:
   version "2.6.9"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
   integrity sha1-a0shRiDINBUuF5Mjcn/Bl0GwhPI=
@@ -2840,14 +2804,6 @@ css-has-pseudo@^0.10.0:
   dependencies:
     postcss "^7.0.6"
     postcss-selector-parser "^5.0.0-rc.4"
-
-css-in-js-utils@^2.0.0:
-  version "2.0.1"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/css-in-js-utils/-/css-in-js-utils-2.0.1.tgz#3b472b398787291b47cfe3e44fecfdd9e914ba99"
-  integrity sha1-O0crOYeHKRtHz+PkT+z92ekUupk=
-  dependencies:
-    hyphenate-style-name "^1.0.2"
-    isobject "^3.0.1"
 
 css-jss@10.0.0-alpha.24:
   version "10.0.0-alpha.24"
@@ -3303,13 +3259,6 @@ dom-converter@^0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.2.1, dom-helpers@^3.4.0:
-  version "3.4.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
-  integrity sha1-6bNpcA+Vn2Ls3lprq95LzNkWmvg=
-  dependencies:
-    "@babel/runtime" "^7.1.2"
-
 dom-serializer@0:
   version "0.2.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/dom-serializer/-/dom-serializer-0.2.1.tgz#13650c850daffea35d8b626a4cfc4d3a17643fdb"
@@ -3380,11 +3329,6 @@ dotenv@6.2.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/dotenv/-/dotenv-6.2.0.tgz#941c0410535d942c8becf28d3f357dbd9d476064"
   integrity sha1-lBwEEFNdlCyL7PKNPzV9vZ1HYGQ=
 
-downshift@^1.31.16:
-  version "1.31.16"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/downshift/-/downshift-1.31.16.tgz#acd81631539502d4112d01bd573654419fd9f640"
-  integrity sha1-rNgWMVOVAtQRLQG9VzZUQZ/Z9kA=
-
 duplexer@^0.1.1:
   version "0.1.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
@@ -3445,13 +3389,6 @@ encodeurl@~1.0.2:
   version "1.0.2"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
   integrity sha1-rT/0yG7C0CkyL1oCw6mmBslbP1k=
-
-encoding@^0.1.11:
-  version "0.1.12"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/encoding/-/encoding-0.1.12.tgz#538b66f3ee62cd1ab51ec323829d1f9480c74beb"
-  integrity sha1-U4tm8+5izRq1HsMjgp0flIDHS+s=
-  dependencies:
-    iconv-lite "~0.4.13"
 
 end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   version "1.4.1"
@@ -3760,28 +3697,6 @@ eventsource@^1.0.7:
   dependencies:
     original "^1.0.0"
 
-evergreen-ui@^4.18.1:
-  version "4.18.1"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/evergreen-ui/-/evergreen-ui-4.18.1.tgz#b277e05ae0beefbf361499a7148ff45b7db7cc31"
-  integrity sha1-snfgWuC+7782FJmnFI/0W323zDE=
-  dependencies:
-    "@babel/runtime" "^7.1.2"
-    "@blueprintjs/icons" "^3.2.0"
-    arrify "^1.0.1"
-    classnames "^2.2.6"
-    dom-helpers "^3.2.1"
-    downshift "^1.31.16"
-    fuzzaldrin-plus "^0.6.0"
-    glamor "^2.20.40"
-    lodash.debounce "^4.0.8"
-    lodash.mapvalues "^4.6.0"
-    prop-types "^15.6.2"
-    react-scrollbar-size "^2.0.2"
-    react-tiny-virtual-list "^2.1.4"
-    react-transition-group "^2.5.0"
-    tinycolor2 "^1.4.1"
-    ui-box "^1.4.0"
-
 evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
   version "1.0.3"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/evp_bytestokey/-/evp_bytestokey-1.0.3.tgz#7fcbdb198dc71959432efe13842684e0525acb02"
@@ -3974,19 +3889,6 @@ fb-watchman@^2.0.0:
   integrity sha1-VOmr99+i8mzZsWNsWIwa/AXeXVg=
   dependencies:
     bser "^2.0.0"
-
-fbjs@^0.8.12, fbjs@^0.8.16:
-  version "0.8.17"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
-  integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
-  dependencies:
-    core-js "^1.0.0"
-    isomorphic-fetch "^2.1.1"
-    loose-envify "^1.0.0"
-    object-assign "^4.1.0"
-    promise "^7.1.1"
-    setimmediate "^1.0.5"
-    ua-parser-js "^0.7.18"
 
 figgy-pudding@^3.5.1:
   version "3.5.1"
@@ -4257,11 +4159,6 @@ functional-red-black-tree@^1.0.1:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
-fuzzaldrin-plus@^0.6.0:
-  version "0.6.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/fuzzaldrin-plus/-/fuzzaldrin-plus-0.6.0.tgz#832f6489fbe876769459599c914a670ec22947ee"
-  integrity sha1-gy9kifvodnaUWVmckUpnDsIpR+4=
-
 gauge@~2.7.3:
   version "2.7.4"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7"
@@ -4309,17 +4206,6 @@ getpass@^0.1.1:
   integrity sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
   dependencies:
     assert-plus "^1.0.0"
-
-glamor@^2.20.0, glamor@^2.20.40:
-  version "2.20.40"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/glamor/-/glamor-2.20.40.tgz#f606660357b7cf18dface731ad1a2cfa93817f05"
-  integrity sha1-9gZmA1e3zxjfrOcxrRos+pOBfwU=
-  dependencies:
-    fbjs "^0.8.12"
-    inline-style-prefixer "^3.0.6"
-    object-assign "^4.1.1"
-    prop-types "^15.5.10"
-    through "^2.3.8"
 
 glob-parent@^3.1.0:
   version "3.1.0"
@@ -4716,12 +4602,12 @@ https-browserify@^1.0.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
-hyphenate-style-name@^1.0.2, hyphenate-style-name@^1.0.3:
+hyphenate-style-name@^1.0.3:
   version "1.0.3"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/hyphenate-style-name/-/hyphenate-style-name-1.0.3.tgz#097bb7fa0b8f1a9cf0bd5c734cf95899981a9b48"
   integrity sha1-CXu3+guPGpzwvVxzTPlYmZgam0g=
 
-iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
+iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4:
   version "0.4.24"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
   integrity sha1-ICK0sl+93CHS9SSXSkdKr+czkIs=
@@ -4859,22 +4745,6 @@ ini@^1.3.5, ini@~1.3.0:
   version "1.3.5"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha1-7uJfVtscnsYIXgwid4CD9Zar+Sc=
-
-inline-style-prefixer@^3.0.6:
-  version "3.0.8"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/inline-style-prefixer/-/inline-style-prefixer-3.0.8.tgz#8551b8e5b4d573244e66a34b04f7d32076a2b534"
-  integrity sha1-hVG45bTVcyROZqNLBPfTIHaitTQ=
-  dependencies:
-    bowser "^1.7.3"
-    css-in-js-utils "^2.0.0"
-
-inline-style-prefixer@^4.0.2:
-  version "4.0.2"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/inline-style-prefixer/-/inline-style-prefixer-4.0.2.tgz#d390957d26f281255fe101da863158ac6eb60911"
-  integrity sha1-05CVfSbygSVf4QHahjFYrG62CRE=
-  dependencies:
-    bowser "^1.7.3"
-    css-in-js-utils "^2.0.0"
 
 inquirer@6.5.0:
   version "6.5.0"
@@ -5179,7 +5049,7 @@ is-root@2.1.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/is-root/-/is-root-2.1.0.tgz#809e18129cf1129644302a4f8544035d51984a9c"
   integrity sha1-gJ4YEpzxEpZEMCpPhUQDXVGYSpw=
 
-is-stream@^1.0.1, is-stream@^1.1.0:
+is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
   integrity sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
@@ -5239,14 +5109,6 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
-
-isomorphic-fetch@^2.1.1:
-  version "2.2.1"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/isomorphic-fetch/-/isomorphic-fetch-2.2.1.tgz#611ae1acf14f5e81f729507472819fe9733558a9"
-  integrity sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=
-  dependencies:
-    node-fetch "^1.0.1"
-    whatwg-fetch ">=0.10.0"
 
 isstream@~0.1.2:
   version "0.1.2"
@@ -6147,16 +6009,6 @@ lodash._reinterpolate@^3.0.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
   integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
-lodash.debounce@^4.0.8:
-  version "4.0.8"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
-  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
-
-lodash.mapvalues@^4.6.0:
-  version "4.6.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/lodash.mapvalues/-/lodash.mapvalues-4.6.0.tgz#1bafa5005de9dd6f4f26668c30ca37230cc9689c"
-  integrity sha1-G6+lAF3p3W9PJmaMMMo3IwzJaJw=
-
 lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
@@ -6605,14 +6457,6 @@ no-case@^2.2.0:
   integrity sha1-YLgTOWvjmz8SiKTB7V0efSi0ZKw=
   dependencies:
     lower-case "^1.1.1"
-
-node-fetch@^1.0.1:
-  version "1.7.3"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/node-fetch/-/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
-  integrity sha1-mA9vcthSEaU0fGsrwYxbhMPrR+8=
-  dependencies:
-    encoding "^0.1.11"
-    is-stream "^1.0.1"
 
 node-forge@0.7.5:
   version "0.7.5"
@@ -8005,13 +7849,6 @@ promise@8.0.3:
   dependencies:
     asap "~2.0.6"
 
-promise@^7.1.1:
-  version "7.3.1"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/promise/-/promise-7.3.1.tgz#064b72602b18f90f29192b8b1bc418ffd1ebd3bf"
-  integrity sha1-BktyYCsY+Q8pGSuLG8QY/9Hr078=
-  dependencies:
-    asap "~2.0.3"
-
 prompts@^2.0.1:
   version "2.2.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/prompts/-/prompts-2.2.1.tgz#f901dd2a2dfee080359c0e20059b24188d75ad35"
@@ -8020,7 +7857,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
+prop-types@^15.5.8, prop-types@^15.6.0, prop-types@^15.6.2:
   version "15.7.2"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
@@ -8239,16 +8076,6 @@ react-error-overlay@^6.0.1:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-error-overlay/-/react-error-overlay-6.0.1.tgz#b8d3cf9bb991c02883225c48044cb3ee20413e0f"
   integrity sha1-uNPPm7mRwCiDIlxIBEyz7iBBPg8=
 
-react-event-listener@^0.5.1:
-  version "0.5.10"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-event-listener/-/react-event-listener-0.5.10.tgz#378403c555fe616f312891507a742ecbbe2c90de"
-  integrity sha1-N4QDxVX+YW8xKJFQenQuy74skN4=
-  dependencies:
-    "@babel/runtime" "7.0.0-beta.42"
-    fbjs "^0.8.16"
-    prop-types "^15.6.0"
-    warning "^3.0.0"
-
 react-icons@^3.7.0:
   version "3.7.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-icons/-/react-icons-3.7.0.tgz#64fe46231fabfeea27895edeae6c3b78114b8c8f"
@@ -8277,11 +8104,6 @@ react-jss@^10.0.0-alpha.23:
     shallow-equal "^1.2.0"
     theming "3.2.0"
     tiny-warning "^1.0.2"
-
-react-lifecycles-compat@^3.0.4:
-  version "3.0.4"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
-  integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
 
 react-router-dom@^5.0.1:
   version "5.0.1"
@@ -8371,33 +8193,6 @@ react-scripts@3.0.1:
     workbox-webpack-plugin "4.2.0"
   optionalDependencies:
     fsevents "2.0.6"
-
-react-scrollbar-size@^2.0.2:
-  version "2.1.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-scrollbar-size/-/react-scrollbar-size-2.1.0.tgz#105e797135cab92b1f9e16f00071db7f29f80754"
-  integrity sha1-EF55cTXKuSsfnhbwAHHbfyn4B1Q=
-  dependencies:
-    babel-runtime "^6.26.0"
-    prop-types "^15.6.0"
-    react-event-listener "^0.5.1"
-    stifle "^1.0.2"
-
-react-tiny-virtual-list@^2.1.4:
-  version "2.2.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-tiny-virtual-list/-/react-tiny-virtual-list-2.2.0.tgz#eafb6fcf764e4ed41150ff9752cdaad8b35edf4a"
-  integrity sha1-6vtvz3ZOTtQRUP+XUs2q2LNe30o=
-  dependencies:
-    prop-types "^15.5.7"
-
-react-transition-group@^2.5.0:
-  version "2.9.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
-  integrity sha1-35zbAleWIRFRpDbGmo87l7WwfI0=
-  dependencies:
-    dom-helpers "^3.4.0"
-    loose-envify "^1.4.0"
-    prop-types "^15.6.2"
-    react-lifecycles-compat "^3.0.4"
 
 react@^16.9.0:
   version "16.9.0"
@@ -8504,7 +8299,7 @@ regenerator-runtime@0.13.3, regenerator-runtime@^0.13.2:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/regenerator-runtime/-/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
   integrity sha1-fPanfY9cb2Drc8X8GVWyzrAea/U=
 
-regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
+regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha1-vgWtf5v30i4Fb5cmzuUBf78Z4uk=
@@ -8945,7 +8740,7 @@ set-value@^2.0.0, set-value@^2.0.1:
     is-plain-object "^2.0.3"
     split-string "^3.0.1"
 
-setimmediate@^1.0.4, setimmediate@^1.0.5:
+setimmediate@^1.0.4:
   version "1.0.5"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
   integrity sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=
@@ -9254,11 +9049,6 @@ stealthy-require@^1.1.1:
   version "1.1.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
-
-stifle@^1.0.2:
-  version "1.1.1"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/stifle/-/stifle-1.1.1.tgz#4e4c565f19dcf9a6efa3a7379a70c42179edb8d6"
-  integrity sha1-TkxWXxnc+abvo6c3mnDEIXntuNY=
 
 stream-browserify@^2.0.1:
   version "2.0.2"
@@ -9576,7 +9366,7 @@ through2@^2.0.0:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
 
-through@^2.3.6, through@^2.3.8:
+through@^2.3.6:
   version "2.3.8"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
   integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
@@ -9607,11 +9397,6 @@ tiny-warning@^1.0.0, tiny-warning@^1.0.2:
   version "1.0.3"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
   integrity sha1-lKMNtFPfTGQ9D9VmBg1gqHXYR1Q=
-
-tinycolor2@^1.4.1:
-  version "1.4.1"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
-  integrity sha1-9PrTM0R7wLB9TcjpIJ2POaisd+g=
 
 tmp@^0.0.33:
   version "0.0.33"
@@ -9703,11 +9488,6 @@ tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha1-w8GflZc/sKYpc/sJ2Q2WHuQ+XIo=
 
-tslib@~1.9.0:
-  version "1.9.3"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
-  integrity sha1-1+TdeSRdhUKMTX5IIqeZF5VMooY=
-
 tsutils@^3.7.0:
   version "3.17.1"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/tsutils/-/tsutils-3.17.1.tgz#ed719917f11ca0dee586272b2ac49e015a2dd759"
@@ -9757,11 +9537,6 @@ typescript@3.5.3:
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/typescript/-/typescript-3.5.3.tgz#c830f657f93f1ea846819e929092f5fe5983e977"
   integrity sha1-yDD2V/k/HqhGgZ6SkJL1/lmD6Xc=
 
-ua-parser-js@^0.7.18:
-  version "0.7.20"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
-  integrity sha1-dScXi4L2pioPJD0flP0w4+PCEJg=
-
 uglify-js@3.4.x:
   version "3.4.10"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/uglify-js/-/uglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"
@@ -9777,16 +9552,6 @@ uglify-js@^3.1.4:
   dependencies:
     commander "~2.20.0"
     source-map "~0.6.1"
-
-ui-box@^1.4.0:
-  version "1.4.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/ui-box/-/ui-box-1.4.0.tgz#c146158bb750eef006e78780296fc0a2eff3004b"
-  integrity sha1-wUYVi7dQ7vAG54eAKW/Aou/zAEs=
-  dependencies:
-    "@emotion/hash" "^0.6.5"
-    glamor "^2.20.0"
-    inline-style-prefixer "^4.0.2"
-    prop-types "^15.6.0"
 
 unicode-canonical-property-names-ecmascript@^1.0.4:
   version "1.0.4"
@@ -10022,13 +9787,6 @@ walker@^1.0.7, walker@~1.0.5:
   dependencies:
     makeerror "1.0.x"
 
-warning@^3.0.0:
-  version "3.0.0"
-  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
-  integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
-  dependencies:
-    loose-envify "^1.0.0"
-
 watchpack@^1.5.0:
   version "1.6.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/watchpack/-/watchpack-1.6.0.tgz#4bc12c2ebe8aa277a71f1d3f14d685c7b446cd00"
@@ -10172,7 +9930,7 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   dependencies:
     iconv-lite "0.4.24"
 
-whatwg-fetch@3.0.0, whatwg-fetch@>=0.10.0:
+whatwg-fetch@3.0.0:
   version "3.0.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/whatwg-fetch/-/whatwg-fetch-3.0.0.tgz#fc804e458cc460009b1a2b966bc8817d2578aefb"
   integrity sha1-/IBORYzEYACbGiuWa8iBfSV4rvs=
