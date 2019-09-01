@@ -2,6 +2,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 import { ITheme } from '../../Theme';
+import { mixinStyles } from '../application/Styles';
 
 const useStyles = createUseStyles<ITheme, string>((theme) => ({
   root: {
@@ -12,10 +13,10 @@ const useStyles = createUseStyles<ITheme, string>((theme) => ({
     backgroundColor: `${theme.colors.black}90`,
     position: "absolute"
   },
-  header: {
+  content: {
     display: "flex",
     alignSelf: "center",
-    width: "80%",
+    width: theme.contentPercentage,
     marginLeft: "auto",
     marginRight: "auto",
   },
@@ -27,29 +28,32 @@ const useStyles = createUseStyles<ITheme, string>((theme) => ({
     fontFamily: "Permanent Marker"
   },
   '@media (max-width: 768px)': {
-    header: {
-      width: 750,
-      marginLeft: theme.spacing * 2
+    content: {
+      width: "100%",
+      marginLeft: theme.spacing * 2,
+      marginRight: theme.spacing * 2
     }
   }
 }))
 
-const AppBar: React.FC<IAppBarProps> = (props) => {
-    const classes = useStyles(props)
+const MainAppBar: React.FC<IMainAppBarProps> = (props) => {
+    const classes: Record<string, string> = mixinStyles(useStyles, props)
 
     return (
 
-        <div className={classes.root}>
-          <div className={classes.header}>
+        <header className={classes.root}>
+          <div className={classes.content}>
             <div className={classes.logo}>
               ChinMusic
             </div>
           </div>
-        </div>
+        </header>
 
     )
 }
 
-export interface IAppBarProps { }
+export interface IMainAppBarProps { 
+  classes?: Record<string, string>
+}
 
-export default AppBar
+export default MainAppBar

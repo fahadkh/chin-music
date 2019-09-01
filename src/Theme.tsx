@@ -1,14 +1,15 @@
 export const theme: ITheme = {
   palette: {
-    primary: "#2a363b",
-    secondary: "#34495e"
+    primary: "#d2d2d2",
+    secondary: "#d2d2d2"
   },
   text: {
     primary: "#d2d2d2",
     secondary: "#666"
   },
   spacing: 8,
-  appBarHeight: 80,
+  appBarHeight: 76,
+  contentPercentage: "70%",
   colors: {
     black: "#111111"
   }
@@ -21,6 +22,7 @@ export interface ITheme {
   text: IText
   spacing: number
   appBarHeight: number
+  contentPercentage: string
   colors: IColors
 }
 
