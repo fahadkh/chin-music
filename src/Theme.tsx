@@ -5,7 +5,7 @@ export const theme: ITheme = {
   },
   text: {
     primary: "#d2d2d2",
-    secondary: "#666"
+    secondary: "#c7c7c7"
   },
   spacing: 8,
   appBarHeight: 76,

@@ -10,6 +10,7 @@ import { mixinStyles } from '../application/Styles';
 
 const useStyles = createUseStyles<ITheme, string>((theme) => ({
   root: {
+    fontFamily: "'Roboto', sans-serif",
     color: theme.text.primary,
     height: "100vh",
     display: "flex",

@@ -8249,6 +8249,13 @@ react-event-listener@^0.5.1:
     prop-types "^15.6.0"
     warning "^3.0.0"
 
+react-icons@^3.7.0:
+  version "3.7.0"
+  resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-icons/-/react-icons-3.7.0.tgz#64fe46231fabfeea27895edeae6c3b78114b8c8f"
+  integrity sha1-ZP5GIx+r/uoniV7ermw7eBFLjI8=
+  dependencies:
+    camelcase "^5.0.0"
+
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   version "16.9.0"
   resolved "https://artifacts.werally.in:443/artifactory/api/npm/npm/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
