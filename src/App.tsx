@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
 
 import MainContainer from './components/main/MainContainer';
+import SearchContainer from './components/search/SearchContainer';
 import { theme } from './components/application/Theme'
 
 const App: React.FC = () => {
@@ -15,7 +16,7 @@ const App: React.FC = () => {
         <ThemeProvider theme={theme}>
 
             <Route exact path="/" component={MainContainer} />
-            <Route path="/search" component={(_: any) => <div>search</div>} />
+            <Route path="/search" component={SearchContainer} />
             <Route path="/rankings" component={(_: any) => <div>rankings</div>} />
             <Route path="/review/:id" component={(_: any) => <div>review</div>} />
         

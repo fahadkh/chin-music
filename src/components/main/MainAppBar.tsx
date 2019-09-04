@@ -1,10 +1,10 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { ITheme } from '../application/Theme';
+import { ChinTheme } from '../application/Theme';
 import { mixinStyles } from '../application/Styles';
 
-const useStyles = createUseStyles<ITheme, string>((theme) => ({
+const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",

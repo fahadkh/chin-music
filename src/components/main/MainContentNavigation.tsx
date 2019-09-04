@@ -1,18 +1,20 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { ITheme } from '../application/Theme';
+import i18n from '../../i18n/en-US/i18n.json';
+
+import { ChinTheme } from '../application/Theme';
 
 import MainContentLink from './MainContentLink';
 import { Rankings, BrowseAll } from '../application/Links';
 import { mixinStyles } from '../application/Styles';
 
-const useStyles = createUseStyles<ITheme, string>((theme) => ({
+const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
     alignSelf: "center",
     display: "flex",
     justifyContent: "center",
-    paddingTop: theme.spacing * 3
+    paddingTop: theme.spacing * 4
   },
   margin: {
     marginLeft: theme.spacing * 7
@@ -26,11 +28,11 @@ const MainContentNavigation: React.FC<IMainContentNavigationProps> = (props) => 
 
       <div className={classes.root}>
         <MainContentLink to={Rankings}>
-          Rankings
+          {i18n.main.rankings}
         </MainContentLink>
         <div className={classes.margin}/>
         <MainContentLink to={BrowseAll}>
-          Browse All
+          {i18n.main.browseAll}
         </MainContentLink>
       </div>
 

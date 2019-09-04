@@ -1,11 +1,11 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { ITheme } from '../application/Theme';
+import { ChinTheme } from '../application/Theme';
 import { mixinStyles } from '../application/Styles';
 import { NavLink } from 'react-router-dom';
 
-const useStyles = createUseStyles<ITheme, string>((theme) => {
+const useStyles = createUseStyles<ChinTheme, string>((theme) => {
   const focusOrHover = {
     margin: "-1px -1px -1px -1px",
     border: `1px solid ${theme.palette.secondary}`,

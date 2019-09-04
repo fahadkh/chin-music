@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { ITheme } from '../application/Theme';
+import i18n from '../../i18n/en-US/i18n.json';
+
+import { ChinTheme } from '../application/Theme';
 import { mixinStyles } from '../application/Styles';
 import { FaSearch } from 'react-icons/fa';
 
@@ -29,7 +31,7 @@ const MainContentSearch: React.FC<IMainContentSearchProps> = (props) => {
           htmlFor={"main-search"} 
           className={classes.hiddenLabel}
         >
-          Search for reviews
+          {i18n.main.searchLabel}
         </label>
 
         <input 
@@ -54,7 +56,7 @@ const MainContentSearch: React.FC<IMainContentSearchProps> = (props) => {
 
 export default MainContentSearch
 
-const styles = createUseStyles<ITheme, string>((theme) => {
+const styles = createUseStyles<ChinTheme, string>((theme) => {
 
   const inputPaddingFactor = 3;
 

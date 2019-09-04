@@ -4,7 +4,7 @@ const makeTransition = (transitions: string[], duration: string): string => {
   )
 }
 
-const themeCreator = (): ITheme => {
+const themeCreator = (): ChinTheme => {
 
   const defaultDuration = '.25s'
   const defaultTransitionList = ['border-color', 'color']
@@ -38,7 +38,7 @@ const themeCreator = (): ITheme => {
 
 export const theme = themeCreator()
 
-export interface ITheme {
+export interface ChinTheme {
   palette: IPalette
   text: IText
   spacing: number

@@ -1,14 +1,14 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { ITheme } from '../application/Theme';
+import { ChinTheme } from '../application/Theme';
 
 import MainAppBar from './MainAppBar';
 import MainHighlight from './MainHighlight';
 import MainContent from './MainContent'
 import { mixinStyles } from '../application/Styles';
 
-const useStyles = createUseStyles<ITheme, string>((theme) => ({
+const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
     fontFamily: "'Roboto', sans-serif",
     color: theme.text.primary,
