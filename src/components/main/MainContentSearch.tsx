@@ -5,7 +5,56 @@ import { ITheme } from '../application/Theme';
 import { mixinStyles } from '../application/Styles';
 import { FaSearch } from 'react-icons/fa';
 
-const useStyles = createUseStyles<ITheme, string>((theme) => {
+export interface IMainContentSearchProps { 
+}
+
+const MainContentSearch: React.FC<IMainContentSearchProps> = (props) => {
+    const classes = mixinStyles(styles, props);
+    const [searchEnabled, setSearchEnabled] = useState(false);
+
+    const changeEnableStatus = (value: string) => {
+      if (value.length > 0) {
+        setSearchEnabled(true)
+      } else {
+        setSearchEnabled(false)
+      }
+    }
+
+    return (
+
+      <form className={classes.root} action={"/search"}>
+        <FaSearch className={classes.searchIcon}/>
+
+        <label 
+          htmlFor={"main-search"} 
+          className={classes.hiddenLabel}
+        >
+          Search for reviews
+        </label>
+
+        <input 
+          id={"main-search"} 
+          className={classes.input} 
+          onChange={(ev) => changeEnableStatus(ev.target.value)}
+          type={"text"} 
+          placeholder={"Ramones"} 
+          name={"q"}
+        />
+
+        <input 
+          className={searchEnabled ? classes.searchButton: classes.searchButtonDisabled} 
+          type={"submit"} 
+          value={"Search"} 
+          disabled={!searchEnabled}
+        />
+      </form>
+
+    )
+}
+
+export default MainContentSearch
+
+const styles = createUseStyles<ITheme, string>((theme) => {
 
   const inputPaddingFactor = 3;
 
@@ -75,52 +124,3 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
     }
   })
 })
-
-const MainContentSearch: React.FC<IMainContentSearchProps> = (props) => {
-    const classes = mixinStyles(useStyles, props);
-    const [searchEnabled, setSearchEnabled] = useState(false);
-
-    const changeEnableStatus = (value: string) => {
-      if (value.length > 0) {
-        setSearchEnabled(true)
-      } else {
-        setSearchEnabled(false)
-      }
-    }
-
-    return (
-
-      <form className={classes.root} action={"/search"}>
-        <FaSearch className={classes.searchIcon}/>
-
-        <label 
-          htmlFor={"main-search"} 
-          className={classes.hiddenLabel}
-        >
-          Search for reviews
-        </label>
-
-        <input 
-          id={"main-search"} 
-          className={classes.input} 
-          onChange={(ev) => changeEnableStatus(ev.target.value)}
-          type={"text"} 
-          placeholder={"Ramones"} 
-          name={"q"}
-        />
-
-        <input 
-          className={searchEnabled ? classes.searchButton: classes.searchButtonDisabled} 
-          type={"submit"} 
-          value={"Search"} 
-          disabled={!searchEnabled}
-        />
-      </form>
-
-    )
-}
-
-export interface IMainContentSearchProps { 
-}
-
-export default MainContentSearch
