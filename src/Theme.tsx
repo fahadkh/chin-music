@@ -12,7 +12,8 @@ export const theme: ITheme = {
   contentPercentage: "70%",
   maxContentWidth: 1250,
   colors: {
-    black: "#111111"
+    black: "#000000",
+    gray: "#757575"
   }
 }
 
@@ -40,4 +41,5 @@ interface IPalette {
 
 interface IColors {
   black: string
+  gray: string
 }

@@ -11,7 +11,7 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
   return({
     root: {
       width: "100%",
-      height: 65,
+      height: 60,
       backgroundColor: "#00000075",
       border: `1px solid ${theme.palette.primary}`,
       borderRadius: 4,
@@ -28,6 +28,7 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
     searchIcon: {
       alignSelf: "center",
       fontSize: 24,
+      width: 60,
       color: theme.palette.secondary,
       paddingLeft: theme.spacing * inputPaddingFactor,
       paddingRight: theme.spacing * inputPaddingFactor/2
@@ -43,7 +44,20 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
       border: 'unset'
     },
     searchButton: {
-      color: theme.palette.secondary,
+      cursor: 'pointer',
+      backgroundColor: `${theme.colors.black}90`,
+      color: theme.colors.gray,
+      fontSize: 20,
+      fontWeight: 500,
+      width: 100,
+      border: 'unset',
+      borderLeft: `1px solid ${theme.palette.primary}`,
+      borderRadius: `0px 4px 4px 0px`,
+      '&:hover': {
+        margin: '-1px -1px -1px -1px',
+        border: `1px solid ${theme.palette.secondary}`,
+        color: theme.palette.secondary
+      }
     }
   })
 })

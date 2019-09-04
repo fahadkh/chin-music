@@ -10,7 +10,7 @@ const useStyles = createUseStyles<ITheme, string>((theme) => ({
     width: "100%"
   },
   highlight: {
-    background: "url(https://media.giphy.com/media/dXjGULkvn0fElO2WuJ/giphy.gif) no-repeat center center fixed",
+    background: "url(https://media.giphy.com/media/L0xAO5RZ5tqT7IUHZl/giphy.gif) no-repeat center center fixed",
     backgroundSize: "cover",
     height: "100%",
   },
