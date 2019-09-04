@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
 
 import MainContainer from './components/main/MainContainer';
-import { theme } from './Theme'
+import { theme } from './components/application/Theme'
 
 const App: React.FC = () => {
 

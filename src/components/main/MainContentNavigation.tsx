@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { ITheme } from '../../Theme';
+import { ITheme } from '../application/Theme';
 
 import MainContentLink from './MainContentLink';
 import { Rankings, BrowseAll } from '../application/Links';

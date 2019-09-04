@@ -1,7 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { ITheme } from '../../Theme';
+import { ITheme } from '../application/Theme';
 
 import MainContentSearch from './MainContentSearch';
 import MainContentNavigation from './MainContentNavigation';
