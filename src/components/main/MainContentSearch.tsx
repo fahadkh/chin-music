@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
 import { ITheme } from '../application/Theme';
@@ -13,6 +13,19 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
     margin: '-1px -1px -1px -1px',
     border: `1px solid ${theme.palette.secondary}`,
     color: theme.palette.secondary
+  }
+
+  const button = {
+    cursor: 'pointer',
+    backgroundColor: `${theme.colors.black}90`,
+    color: theme.palette.primary,
+    fontSize: 20,
+    fontWeight: 500,
+    width: 100,
+    border: 'unset',
+    borderLeft: `1px solid ${theme.palette.primary}`,
+    borderRadius: `0px 4px 4px 0px`,
+    transition: theme.transitions.defaultTransitions,
   }
 
   return({
@@ -50,17 +63,13 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
       backgroundColor: 'unset',
       border: 'unset'
     },
+    searchButtonDisabled: {
+      ...button,
+      cursor: "",
+      color: theme.colors.gray
+    },
     searchButton: {
-      cursor: 'pointer',
-      backgroundColor: `${theme.colors.black}90`,
-      color: theme.colors.gray,
-      fontSize: 20,
-      fontWeight: 500,
-      width: 100,
-      border: 'unset',
-      borderLeft: `1px solid ${theme.palette.primary}`,
-      borderRadius: `0px 4px 4px 0px`,
-      transition: theme.transitions.defaultTransitions,
+      ...button,
       '&:hover': focusOrHover,
       '&:focus': focusOrHover
     }
@@ -69,14 +78,43 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
 
 const MainContentSearch: React.FC<IMainContentSearchProps> = (props) => {
     const classes = mixinStyles(useStyles, props);
+    const [searchEnabled, setSearchEnabled] = useState(false);
+
+    const changeEnableStatus = (value: string) => {
+      if (value.length > 0) {
+        setSearchEnabled(true)
+      } else {
+        setSearchEnabled(false)
+      }
+    }
 
     return (
 
       <form className={classes.root} action={"/search"}>
         <FaSearch className={classes.searchIcon}/>
-        <label htmlFor={"main-search"} className={classes.hiddenLabel}>Search for reviews</label>
-        <input id={"main-search"} className={classes.input} type={"text"} placeholder={"Ramones"} name={"q"}/>
-        <input className={classes.searchButton} type={"submit"} value={"Search"}/>
+
+        <label 
+          htmlFor={"main-search"} 
+          className={classes.hiddenLabel}
+        >
+          Search for reviews
+        </label>
+
+        <input 
+          id={"main-search"} 
+          className={classes.input} 
+          onChange={(ev) => changeEnableStatus(ev.target.value)}
+          type={"text"} 
+          placeholder={"Ramones"} 
+          name={"q"}
+        />
+
+        <input 
+          className={searchEnabled ? classes.searchButton: classes.searchButtonDisabled} 
+          type={"submit"} 
+          value={"Search"} 
+          disabled={!searchEnabled}
+        />
       </form>
 
     )
