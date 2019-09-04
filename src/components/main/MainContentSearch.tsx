@@ -11,9 +11,9 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
   return({
     root: {
       width: "100%",
-      height: 60,
+      height: 65,
       backgroundColor: "#00000075",
-      border: `1px solid ${theme.palette.secondary}`,
+      border: `1px solid ${theme.palette.primary}`,
       borderRadius: 4,
       display: "flex"
     },
@@ -28,20 +28,22 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
     searchIcon: {
       alignSelf: "center",
       fontSize: 24,
-      paddingLeft: theme.spacing * 3
+      color: theme.palette.secondary,
+      paddingLeft: theme.spacing * inputPaddingFactor,
+      paddingRight: theme.spacing * inputPaddingFactor/2
     },
     input: {
       width: `calc(100% - ${theme.spacing * inputPaddingFactor * 2}px)`,
       fontSize: 24,
       fontWeight: 600,
       color: theme.text.primary,
-      paddingLeft: theme.spacing * inputPaddingFactor,
+      paddingLeft: theme.spacing * inputPaddingFactor/2,
       paddingRight: theme.spacing * inputPaddingFactor,
       backgroundColor: 'unset',
       border: 'unset'
     },
     searchButton: {
-
+      color: theme.palette.secondary,
     }
   })
 })
@@ -55,7 +57,7 @@ const MainContentSearch: React.FC<IMainContentSearchProps> = (props) => {
         <FaSearch className={classes.searchIcon}/>
         <label htmlFor={"main-search"} className={classes.hiddenLabel}>Search for reviews</label>
         <input id={"main-search"} className={classes.input} type={"text"} placeholder={"Ramones"} name={"q"}/>
-        <input type={"submit"} value={"Search"}/>
+        <input className={classes.searchButton} type={"submit"} value={"Search"}/>
       </form>
 
     )

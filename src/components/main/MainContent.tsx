@@ -12,6 +12,7 @@ const useStyles = createUseStyles<ITheme, string>((theme) => ({
     width: theme.contentPercentage,
     marginLeft: "auto",
     marginRight: "auto",
+    maxWidth: theme.maxContentWidth
   },
   '@media (max-width: 768px)': {
     root: {

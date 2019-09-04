@@ -17,6 +17,7 @@ const useStyles = createUseStyles<ITheme, string>((theme) => ({
     "&:hover": {
       margin: "-1px -1px -1px -1px",
       border: `1px solid ${theme.palette.secondary}`,
+      color: theme.palette.secondary
     }
   }
 }))
