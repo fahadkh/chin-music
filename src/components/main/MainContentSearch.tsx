@@ -38,8 +38,9 @@ const MainContentSearch: React.FC<IMainContentSearchProps> = (props) => {
           id={"main-search"} 
           className={classes.input} 
           onChange={(ev) => changeEnableStatus(ev.target.value)}
-          type={"text"} 
-          placeholder={"Ramones"} 
+          autoComplete={"off"}
+          type={"search"} 
+          placeholder={"Search Reviews"} 
           name={"q"}
         />
 
@@ -60,6 +61,8 @@ const styles = createUseStyles<ChinTheme, string>((theme) => {
 
   const inputPaddingFactor = 3;
 
+  const opacity = 'c9'
+
   const focusOrHover = {
     margin: '-1px -1px -1px -1px',
     border: `1px solid ${theme.palette.secondary}`,
@@ -68,13 +71,13 @@ const styles = createUseStyles<ChinTheme, string>((theme) => {
 
   const button = {
     cursor: 'pointer',
-    backgroundColor: `${theme.colors.black}90`,
+    backgroundColor: `${theme.colors.black}${opacity}`,
     color: theme.palette.primary,
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 500,
-    width: 100,
+    width: 105,
     border: 'unset',
-    borderLeft: `1px solid ${theme.palette.primary}`,
+    borderLeft: `1px solid ${theme.colors.gray}`,
     borderRadius: `0px 4px 4px 0px`,
     transition: theme.transitions.defaultTransitions,
   }
@@ -82,9 +85,9 @@ const styles = createUseStyles<ChinTheme, string>((theme) => {
   return({
     root: {
       width: "100%",
-      height: 60,
-      backgroundColor: "#00000075",
-      border: `1px solid ${theme.palette.primary}`,
+      height: 65,
+      backgroundColor: `${theme.colors.black}${opacity}`,
+      border: `1px solid ${theme.colors.gray}`,
       borderRadius: 4,
       display: "flex"
     },
@@ -106,13 +109,16 @@ const styles = createUseStyles<ChinTheme, string>((theme) => {
     },
     input: {
       width: `calc(100% - ${theme.spacing * inputPaddingFactor * 2}px)`,
-      fontSize: 24,
-      fontWeight: 600,
+      fontSize: 22,
+      fontWeight: 500,
       color: theme.text.primary,
       paddingLeft: theme.spacing * inputPaddingFactor/2,
       paddingRight: theme.spacing * inputPaddingFactor,
       backgroundColor: 'unset',
-      border: 'unset'
+      border: 'unset',
+      '&:focus': {
+        outline: `2px solid ${theme.palette.secondary}`
+      }
     },
     searchButtonDisabled: {
       ...button,
@@ -123,6 +129,35 @@ const styles = createUseStyles<ChinTheme, string>((theme) => {
       ...button,
       '&:hover': focusOrHover,
       '&:focus': focusOrHover
+    },
+    '@media (max-width: 768px)': {
+      searchButton: {
+        display: 'none'
+      },
+      searchButtonDisabled: {
+        display: 'none'
+      },
+      searchIcon: {
+        alignSelf: "center",
+        fontSize: 24,
+        width: 60,
+        color: theme.palette.secondary,
+        paddingLeft: theme.spacing * inputPaddingFactor/4,
+        paddingRight: theme.spacing * inputPaddingFactor/8
+      },
+      input: {
+        width: `calc(100% - ${theme.spacing * inputPaddingFactor * 2}px)`,
+        fontSize: 20,
+        fontWeight: 500,
+        color: theme.text.primary,
+        paddingLeft: theme.spacing * inputPaddingFactor/2,
+        paddingRight: theme.spacing * inputPaddingFactor/2,
+        backgroundColor: 'unset',
+        border: 'unset',
+        '&:focus': {
+          outline: `2px solid ${theme.palette.secondary}`
+        }
+      }
     }
   })
 })

@@ -18,7 +18,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
       textDecoration: "none",
       fontSize: 18,
       fontWeight: 500,
-      backgroundColor: "#0000008A",
+      backgroundColor: `${theme.colors.black}c9`,
       borderRadius: 4,
       padding: `${theme.spacing}px ${theme.spacing*2}px`,
       transition: theme.transitions.defaultTransitions,
