@@ -1,23 +1,42 @@
-export const theme: ITheme = {
-  palette: {
-    primary: "#d2d2d2",
-    secondary: "#0fa093"
-  },
-  text: {
-    primary: "#d2d2d2",
-    secondary: "#c7c7c7"
-  },
-  spacing: 8,
-  appBarHeight: 76,
-  contentPercentage: "70%",
-  maxContentWidth: 1250,
-  colors: {
-    black: "#000000",
-    gray: "#757575"
-  }
+const makeTransition = (transitions: string[], duration: string): string => {
+  return(
+    transitions.map((transition) => `${transition} ${duration}`).join(', ')
+  )
 }
 
-//#2a363b
+const themeCreator = (): ITheme => {
+
+  const defaultDuration = '.25s'
+  const defaultTransitionList = ['border-color', 'color']
+
+  return({
+    palette: {
+      primary: "#d2d2d2",
+      secondary: "#0fa093"
+    },
+    text: {
+      primary: "#d2d2d2",
+      secondary: "#c7c7c7"
+    },
+    spacing: 8,
+    appBarHeight: 80,
+    contentPercentage: "70%",
+    maxContentWidth: 1250,
+    colors: {
+      black: "#000000",
+      gray: "#757575"
+    },
+    transitions: {
+      makeTransitions: makeTransition,
+      defaultDuration: defaultDuration,
+      defaultTransitionList: defaultTransitionList,
+      defaultTransitions: makeTransition(defaultTransitionList, defaultDuration)
+    }
+  })
+  
+}
+
+export const theme = themeCreator()
 
 export interface ITheme {
   palette: IPalette
@@ -27,6 +46,7 @@ export interface ITheme {
   contentPercentage: string
   maxContentWidth: number
   colors: IColors
+  transitions: ITransitions
 }
 
 interface IText {
@@ -42,4 +62,11 @@ interface IPalette {
 interface IColors {
   black: string
   gray: string
+}
+
+interface ITransitions {
+  makeTransitions: (transitions: string[], duration: string) => string
+  defaultDuration: string,
+  defaultTransitionList: string[]
+  defaultTransitions: string
 }

@@ -6,7 +6,14 @@ import { mixinStyles } from '../application/Styles';
 import { FaSearch } from 'react-icons/fa';
 
 const useStyles = createUseStyles<ITheme, string>((theme) => {
+
   const inputPaddingFactor = 3;
+
+  const focusOrHover = {
+    margin: '-1px -1px -1px -1px',
+    border: `1px solid ${theme.palette.secondary}`,
+    color: theme.palette.secondary
+  }
 
   return({
     root: {
@@ -53,11 +60,9 @@ const useStyles = createUseStyles<ITheme, string>((theme) => {
       border: 'unset',
       borderLeft: `1px solid ${theme.palette.primary}`,
       borderRadius: `0px 4px 4px 0px`,
-      '&:hover': {
-        margin: '-1px -1px -1px -1px',
-        border: `1px solid ${theme.palette.secondary}`,
-        color: theme.palette.secondary
-      }
+      transition: theme.transitions.defaultTransitions,
+      '&:hover': focusOrHover,
+      '&:focus': focusOrHover
     }
   })
 })
