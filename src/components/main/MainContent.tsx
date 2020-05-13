@@ -1,10 +1,10 @@
-import React from 'react';
-import { createUseStyles } from 'react-jss';
+import React from "react";
+import { createUseStyles } from "react-jss";
 
-import { ChinTheme } from '../application/Theme';
+import { ChinTheme } from "../application/Theme";
 
-import MainContentSearch from './MainContentSearch';
-import MainContentNavigation from './MainContentNavigation';
+import MainContentSearch from "./MainContentSearch";
+import MainContentNavigation from "./MainContentNavigation";
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
@@ -12,33 +12,31 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     width: theme.contentPercentage,
     marginLeft: "auto",
     marginRight: "auto",
-    maxWidth: theme.maxContentWidth
+    maxWidth: theme.maxContentWidth,
   },
-  '@media (max-width: 768px)': {
+  "@media (max-width: 768px)": {
     root: {
       width: "100%",
       alignSelf: "center",
       marginLeft: theme.spacing * 2,
-      marginRight: theme.spacing * 2
-    }
-  }
-}))
+      marginRight: theme.spacing * 2,
+    },
+  },
+}));
 
 const MainContent: React.FC<IMainContentProps> = (props) => {
-    const classes = useStyles(props)
+  const classes = useStyles(props);
 
-    return (
+  return (
+    <div className={classes.root}>
+      <MainContentSearch />
+      {/* <MainContentNavigation/> */}
+    </div>
+  );
+};
 
-      <div className={classes.root}>
-        <MainContentSearch/>
-        <MainContentNavigation/>
-      </div>
-
-    )
+export interface IMainContentProps {
+  classes?: Record<string, string>;
 }
 
-export interface IMainContentProps { 
-  classes?: Record<string, string>
-}
-
-export default MainContent
+export default MainContent;

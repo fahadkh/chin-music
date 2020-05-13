@@ -3,10 +3,10 @@ import { createUseStyles } from 'react-jss';
 
 import { ChinTheme } from '../application/Theme';
 
-import MainAppBar from './MainAppBar';
 import MainHighlight from './MainHighlight';
 import MainContent from './MainContent'
 import { mixinStyles } from '../application/Styles';
+import AppBar from '../application/AppBar';
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
@@ -27,7 +27,7 @@ const MainContainer: React.FC<IMainContainerProps> = (props) => {
 
       <div className={classes.root}>
 
-        <MainAppBar/>
+        <AppBar main/>
 
         <MainHighlight>
           <MainContent/>

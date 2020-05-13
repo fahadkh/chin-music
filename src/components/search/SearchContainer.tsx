@@ -7,6 +7,11 @@ import { ChinTheme } from '../application/Theme';
 import { mixinStyles } from '../application/Styles';
 import { queryParams } from '../application/Links';
 
+import AppBar from '../application/AppBar';
+import SearchBox from './SearchBox';
+import SearchResults from './SearchResults';
+import searchResults from '../../data/search.json';
+
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
   },
@@ -15,11 +20,16 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
 const SearchContainer: React.FC<SearchContainerProps> = (props) => {
   const classes: Record<string, string> = mixinStyles(useStyles, props)
 
+  const searchTerm = queryParams(props.location.search).get("q");
+  const results = searchResults
+
   return (
 
     <div className={classes.root}>
-      Search for {queryParams(props.location.search).get("q")}
-      </div>
+      <AppBar/>
+      <SearchBox />
+      <SearchResults />
+    </div>
 
   )
 }

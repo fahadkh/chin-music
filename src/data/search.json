@@ -1,0 +1,27 @@
+[
+    {
+        "album": "Pink Flag",
+        "artist": "Wire",
+        "rating": 100.00,
+        "year": "1975",
+        "genre": "Art Punk",
+        "metadata": "Harvest;Mike Thorne",
+        "image": "https://upload.wikimedia.org/wikipedia/en/3/3e/Wirepinkflagcover.jpg"
+    },
+    {
+        "album": "Pink Flag 2",
+        "artist": "Wire 3",
+        "rating": 85.00,
+        "year": "2003",
+        "genre": "Alternative",
+        "metadata": "Harvest;Mike Thorne"
+    },
+    {
+        "album": "Song 2",
+        "artist": "Pink",
+        "rating": 63.44,
+        "year": "1999",
+        "genre": "Rock",
+        "metadata": "Harvest;Mike Thorne"
+    }
+]
