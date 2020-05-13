@@ -40,7 +40,7 @@ const SearchContainer: React.FC<SearchContainerProps> = (props) => {
 
       <div className={classes.root}>
         <SearchBox query={term} />
-        <SearchResults />
+        <SearchResults results={results} />
       </div>
     </>
   );

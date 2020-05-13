@@ -12,11 +12,12 @@ const themeCreator = (): ChinTheme => {
     palette: {
       primary: "#f5f5f5",
       secondary: "#0fa093",
-      faded: "#888",
+      faded: "#D5D5D5",
     },
     text: {
       primary: "#f5f5f5",
-      secondary: "#252525",
+      secondary: "#353535",
+      faded: "#757575",
     },
     spacing: 8,
     appBarHeight: 80,
@@ -55,6 +56,7 @@ export interface ChinTheme {
 interface IText {
   primary: string;
   secondary: string;
+  faded: string;
 }
 
 interface IPalette {

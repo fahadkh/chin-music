@@ -1,27 +1,39 @@
 [
-    {
-        "album": "Pink Flag",
-        "artist": "Wire",
-        "rating": 100.00,
-        "year": "1975",
-        "genre": "Art Punk",
-        "metadata": "Harvest;Mike Thorne",
-        "image": "https://upload.wikimedia.org/wikipedia/en/3/3e/Wirepinkflagcover.jpg"
-    },
-    {
-        "album": "Pink Flag 2",
-        "artist": "Wire 3",
-        "rating": 85.00,
-        "year": "2003",
-        "genre": "Alternative",
-        "metadata": "Harvest;Mike Thorne"
-    },
-    {
-        "album": "Song 2",
-        "artist": "Pink",
-        "rating": 63.44,
-        "year": "1999",
-        "genre": "Rock",
-        "metadata": "Harvest;Mike Thorne"
-    }
+  {
+    "id": "pink-flag-wire-1975",
+    "resultType": "album-review",
+    "album": "Pink Flag",
+    "artist": "Wire",
+    "rating": 100.0,
+    "year": "1975",
+    "genres": ["Art Punk"],
+    "tags": [],
+    "metadata": "Harvest;Mike Thorne",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3e/Wirepinkflagcover.jpg",
+    "origin": "UK"
+  },
+  {
+    "id": "pink-flag-2-wire-3-2003",
+    "resultType": "album-review",
+    "album": "Pink Flag 2",
+    "artist": "Wire 3",
+    "rating": 85.0,
+    "year": "2003",
+    "genres": ["Alternative", "Rock"],
+    "tags": [],
+    "metadata": "Harvest;Mike Thorne",
+    "origin": "USA"
+  },
+  {
+    "id": "song-2-pink-1999",
+    "resultType": "album-review",
+    "album": "Song 2",
+    "artist": "Pink",
+    "rating": 63.44,
+    "year": "1999",
+    "genres": ["Rock"],
+    "tags": [],
+    "metadata": "Harvest;Mike Thorne",
+    "origin": "Poland"
+  }
 ]
