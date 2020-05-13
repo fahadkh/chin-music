@@ -12,6 +12,7 @@ const themeCreator = (): ChinTheme => {
     palette: {
       primary: "#f5f5f5",
       secondary: "#0fa093",
+      faded: "#888",
     },
     text: {
       primary: "#f5f5f5",
@@ -24,6 +25,7 @@ const themeCreator = (): ChinTheme => {
     colors: {
       black: "#000000",
       gray: "#353535",
+      lightGray: "#666",
     },
     transitions: {
       makeTransitions: makeTransition,
@@ -58,11 +60,13 @@ interface IText {
 interface IPalette {
   primary: string;
   secondary: string;
+  faded: string;
 }
 
 interface IColors {
   black: string;
   gray: string;
+  lightGray: string;
 }
 
 interface ITransitions {

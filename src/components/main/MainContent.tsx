@@ -4,7 +4,6 @@ import { createUseStyles } from "react-jss";
 import { ChinTheme } from "../application/Theme";
 
 import MainContentSearch from "./MainContentSearch";
-import MainContentNavigation from "./MainContentNavigation";
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
@@ -30,7 +29,6 @@ const MainContent: React.FC<IMainContentProps> = (props) => {
   return (
     <div className={classes.root}>
       <MainContentSearch />
-      {/* <MainContentNavigation/> */}
     </div>
   );
 };

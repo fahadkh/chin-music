@@ -1,29 +1,22 @@
-import React from 'react';
-import { createUseStyles } from 'react-jss';
+import React from "react";
+import { createUseStyles } from "react-jss";
 
-import { ChinTheme } from '../application/Theme';
+import { ChinTheme } from "../application/Theme";
 
-import { mixinStyles } from '../application/Styles';
+import { mixinStyles } from "../application/Styles";
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-  },
-}))
+  root: {},
+}));
 
 const SearchResult: React.FC<SearchResultProps> = (props) => {
-  const classes: Record<string, string> = mixinStyles(useStyles, props)
+  const classes: Record<string, string> = mixinStyles(useStyles, props);
 
-  return (
-
-    <div>
-      Result 1
-    </div>
-
-  )
-}
+  return <div>Result 1</div>;
+};
 
 export interface SearchResultProps {
-  classes?: Record<string, string>
+  classes?: Record<string, string>;
 }
 
-export default SearchResult
+export default SearchResult;

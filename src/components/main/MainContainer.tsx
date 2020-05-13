@@ -1,12 +1,12 @@
-import React from 'react';
-import { createUseStyles } from 'react-jss';
+import React from "react";
+import { createUseStyles } from "react-jss";
 
-import { ChinTheme } from '../application/Theme';
+import { ChinTheme } from "../application/Theme";
 
-import MainHighlight from './MainHighlight';
-import MainContent from './MainContent'
-import { mixinStyles } from '../application/Styles';
-import AppBar from '../application/AppBar';
+import MainHighlight from "./MainHighlight";
+import MainContent from "./MainContent";
+import { mixinStyles } from "../application/Styles";
+import AppBar from "../application/AppBar";
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
@@ -14,32 +14,28 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     color: theme.text.primary,
     height: "100vh",
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "center",
   },
-}))
+}));
 
 const MainContainer: React.FC<IMainContainerProps> = (props) => {
-    const classes: Record<string, string> = mixinStyles(useStyles, props)
+  const classes: Record<string, string> = mixinStyles(useStyles, props);
 
-    // TODO: Fetch featured gif and article links
+  // TODO: Fetch featured gif and article links
 
-    return (
+  return (
+    <div className={classes.root}>
+      <AppBar main />
 
-      <div className={classes.root}>
+      <MainHighlight>
+        <MainContent />
+      </MainHighlight>
+    </div>
+  );
+};
 
-        <AppBar main/>
-
-        <MainHighlight>
-          <MainContent/>
-        </MainHighlight>
-
-      </div>
-
-    )
+export interface IMainContainerProps {
+  classes?: Record<string, string>;
 }
 
-export interface IMainContainerProps { 
-  classes?: Record<string, string>
-}
-
-export default MainContainer
+export default MainContainer;
