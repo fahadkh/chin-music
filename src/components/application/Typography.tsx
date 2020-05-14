@@ -37,7 +37,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
   return {
     title: {
       ...themeStyling,
-      fontSize: 36,
+      fontSize: 38,
     },
     subTitle: {
       ...themeStyling,

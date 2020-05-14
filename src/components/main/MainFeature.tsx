@@ -46,6 +46,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     alignSelf: "center",
     flexWrap: "wrap",
     width: "100%",
+    maxWidth: 900,
     paddingLeft: theme.spacing * 4,
     paddingRight: theme.spacing * 4,
   },

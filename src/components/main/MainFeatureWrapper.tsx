@@ -24,8 +24,8 @@ const useStyles = createUseStyles<ChinTheme, string>({
     width: "100%",
     background: (props: MainFeatureWrapperProps) =>
       props.imageLink
-        ? `url(${props.imageLink}) `
-        : "url(https://media.giphy.com/media/L0xAO5RZ5tqT7IUHZl/giphy.gif) no-repeat center center fixed",
+        ? `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${props.imageLink}) no-repeat center center fixed`
+        : "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://media.giphy.com/media/L0xAO5RZ5tqT7IUHZl/giphy.gif) no-repeat center center fixed",
   },
   content: {
     display: "flex",
