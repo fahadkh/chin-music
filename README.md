@@ -4,15 +4,13 @@ Project for learning some new tech for web dev. Hopefully will also actually be 
 
 ### Tech - Potential options
 
-Backend: Some js lib?
+Backend: Something with Clojure
 
-Frontend: React (hooks!) + typescript, https://reagent-project.github.io/
-
-Communication: gRAphQl
+Frontend: React/typescript
 
 Deploy: TravisCI? AWS/Heroku?
 
-Data Store: Maybe something nosql or easy to do with JS, postgres + index or elasticsearch for indexing/search of tags/album names?
+Data Store: TBD (postgresql/elasticsearch)
 
 ### Content
 Courtesy of Phil D.
