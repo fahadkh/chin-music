@@ -52,15 +52,14 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
     },
     link: {
       ...themeStyling,
-      textDecoration: "unset",
+      textDecoration: "none",
       fontSize: 15,
-      fontWeight: 700,
+      fontWeight: 800,
       letterSpacing: 1,
-      transition: "color .6s",
       textTransform: "uppercase",
-      color: theme.text.primary,
+      color: theme.palette.highlight,
       "&:hover": {
-        color: theme.palette.highlight,
+        textDecoration: "underline",
       },
     },
   };

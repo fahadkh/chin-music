@@ -24,12 +24,27 @@ const MainFeature: React.FC<MainFeatureProps> = (props) => {
         <div className={classes.featureContent}>
           <Body>{featuredArticle.caption}</Body>
           <div className={classes.linkContainer}>
-            <Link url={`/article/${featuredArticle.id}`}>> Read More</Link>
+            <Link url={`/article/${featuredArticle.id}`}>
+              {featureTypeToLinkLabel(featuredArticle.type)}
+            </Link>
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+const featureTypeToLinkLabel = (featureType: string) => {
+  switch (featureType) {
+    case "review":
+      return "> Read Full Review";
+    case "blog":
+      return "> Read Full Post";
+    case "rankings":
+      return "> View Full Rankings";
+    default:
+      return "> Read More";
+  }
 };
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
@@ -46,7 +61,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     alignSelf: "center",
     flexWrap: "wrap",
     width: "100%",
-    maxWidth: 900,
+    maxWidth: 925,
     paddingLeft: theme.spacing * 4,
     paddingRight: theme.spacing * 4,
   },
