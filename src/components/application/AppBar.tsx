@@ -28,7 +28,7 @@ const AppBar: React.FC<AppBarProps> = (props) => {
     <header className={classes.root}>
       <div className={classes.content}>
         <span className={classes.logo}>ChinMusic</span>
-        <span className={classNames(classes.logo, classes.logoSecondary)}>
+        <span className={classNames(classes.logo, classes.logoHighlighted)}>
           Reviews
         </span>
       </div>
@@ -54,6 +54,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     display: "flex",
     alignSelf: "center",
     width: theme.contentPercentage,
+    maxWidth: theme.maxContentWidth,
     marginLeft: "auto",
     marginRight: "auto",
   },
@@ -66,7 +67,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     textTransform: "uppercase",
     letterSpacing: 1,
   },
-  logoSecondary: {
+  logoHighlighted: {
     color: theme.palette.highlight,
   },
   "@media (max-width: 768px)": {
@@ -75,7 +76,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
       marginLeft: theme.spacing * 2,
       marginRight: theme.spacing * 2,
     },
-    logoColored: {
+    logoHighlighted: {
       visibility: "hidden",
     },
   },

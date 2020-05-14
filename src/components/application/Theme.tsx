@@ -28,7 +28,7 @@ const themeCreator = (): ChinTheme => {
     appBarHeight: 80,
     spacing: 8,
     contentPercentage: "70%",
-    maxContentWidth: 1250,
+    maxContentWidth: 1400,
     transitions: {
       makeTransitions: makeTransition,
       defaultDuration: defaultDuration,

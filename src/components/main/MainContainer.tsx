@@ -3,10 +3,14 @@ import { createUseStyles } from "react-jss";
 
 import { ChinTheme } from "../application/Theme";
 
-import MainHighlight from "./MainFeatureWrapper";
-import MainContent from "./MainFeature";
+import MainFeatureWrapper from "./MainFeatureWrapper";
+import MainFeature from "./MainFeature";
 import { mixinStyles } from "../application/Styles";
 import AppBar from "../application/AppBar";
+
+import { FeaturedArticle } from "./MainFeature";
+
+import featured from "../../data/featured.json";
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
@@ -28,17 +32,19 @@ const ContentDivider: React.FC = (props) => {
 const MainContainer: React.FC<MainContainerProps> = (props) => {
   const classes: Record<string, string> = mixinStyles(useStyles, props);
 
-  // TODO: Fetch featured gif and article links
+  // TODO: Fetch featured gif, article, and recent article links
+  const featuredArticle: FeaturedArticle = featured;
 
   return (
     <div className={classes.root}>
       <AppBar main />
+      <main>
+        <MainFeatureWrapper imageLink={featuredArticle.image}>
+          <MainFeature featuredArticle={featuredArticle} />
+        </MainFeatureWrapper>
 
-      <MainHighlight>
-        <MainContent />
-      </MainHighlight>
-
-      <ContentDivider />
+        <ContentDivider />
+      </main>
     </div>
   );
 };

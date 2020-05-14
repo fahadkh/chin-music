@@ -3,13 +3,67 @@ import { createUseStyles } from "react-jss";
 
 import { ChinTheme } from "../application/Theme";
 
+import { Title, Body, Link } from "../application/Typography";
+
+const MainFeature: React.FC<MainFeatureProps> = (props) => {
+  const classes = useStyles(props);
+  const { featuredArticle } = props;
+
+  return (
+    <div className={classes.root}>
+      <div className={classes.featureContainer}>
+        <div className={classes.featureContent}>
+          <div className={classes.title}>
+            <Title>{featuredArticle.title}</Title>
+          </div>
+
+          <div className={classes.divider} />
+          <div>{`by ${featuredArticle.author}`}</div>
+        </div>
+
+        <div className={classes.featureContent}>
+          <Body>{featuredArticle.caption}</Body>
+          <div className={classes.linkContainer}>
+            <Link url={`/article/${featuredArticle.id}`}>Read More</Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
-    alignSelf: "center",
+    display: "flex",
+    justifyContent: "center",
     width: theme.contentPercentage,
+    maxWidth: theme.maxContentWidth,
     marginLeft: "auto",
     marginRight: "auto",
-    maxWidth: theme.maxContentWidth,
+  },
+  featureContainer: {
+    display: "flex",
+    alignSelf: "center",
+    flexWrap: "wrap",
+    width: "100%",
+    paddingLeft: theme.spacing * 4,
+    paddingRight: theme.spacing * 4,
+  },
+  featureContent: {
+    textAlign: "left",
+    maxWidth: "50%",
+    flexGrow: 1,
+  },
+  title: {
+    textTransform: "uppercase",
+  },
+  divider: {
+    borderBottom: `2px solid ${theme.palette.highlight}`,
+    maxWidth: 155,
+    marginBottom: theme.spacing * 1.5,
+  },
+  linkContainer: {
+    paddingTop: theme.spacing * 2,
   },
   "@media (max-width: 768px)": {
     root: {
@@ -18,21 +72,25 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
       marginLeft: theme.spacing * 2,
       marginRight: theme.spacing * 2,
     },
+    featureContent: {
+      maxWidth: "unset",
+    },
   },
 }));
 
-const MainContent: React.FC<IMainContentProps> = (props) => {
-  const classes = useStyles(props);
-
-  return (
-    <div className={classes.root}>
-      <div>yo</div>
-    </div>
-  );
-};
-
-export interface IMainContentProps {
+export interface MainFeatureProps {
   classes?: Record<string, string>;
+  featuredArticle: FeaturedArticle;
 }
 
-export default MainContent;
+export interface FeaturedArticle {
+  id: string;
+  title: string;
+  type: string;
+  author: string;
+  caption: string;
+  created: number;
+  image?: string;
+}
+
+export default MainFeature;
