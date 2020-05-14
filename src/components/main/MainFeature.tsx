@@ -24,7 +24,7 @@ const MainFeature: React.FC<MainFeatureProps> = (props) => {
         <div className={classes.featureContent}>
           <Body>{featuredArticle.caption}</Body>
           <div className={classes.linkContainer}>
-            <Link url={`/article/${featuredArticle.id}`}>Read More</Link>
+            <Link url={`/article/${featuredArticle.id}`}>> Read More</Link>
           </div>
         </div>
       </div>
