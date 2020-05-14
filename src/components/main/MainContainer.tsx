@@ -3,22 +3,29 @@ import { createUseStyles } from "react-jss";
 
 import { ChinTheme } from "../application/Theme";
 
-import MainHighlight from "./MainHighlight";
-import MainContent from "./MainContent";
+import MainHighlight from "./MainFeatureWrapper";
+import MainContent from "./MainFeature";
 import { mixinStyles } from "../application/Styles";
 import AppBar from "../application/AppBar";
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: "'Oswald', sans-serif",
     color: theme.text.primary,
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
+  },
+  divider: {
+    backgroundColor: theme.palette.primary,
+    height: 40,
   },
 }));
 
-const MainContainer: React.FC<IMainContainerProps> = (props) => {
+const ContentDivider: React.FC = (props) => {
+  const classes: Record<string, string> = useStyles();
+
+  return <div className={classes.divider}>{props.children}</div>;
+};
+
+const MainContainer: React.FC<MainContainerProps> = (props) => {
   const classes: Record<string, string> = mixinStyles(useStyles, props);
 
   // TODO: Fetch featured gif and article links
@@ -30,11 +37,13 @@ const MainContainer: React.FC<IMainContainerProps> = (props) => {
       <MainHighlight>
         <MainContent />
       </MainHighlight>
+
+      <ContentDivider />
     </div>
   );
 };
 
-export interface IMainContainerProps {
+export interface MainContainerProps {
   classes?: Record<string, string>;
 }
 

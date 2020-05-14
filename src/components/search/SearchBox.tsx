@@ -34,8 +34,8 @@ const SearchBox: React.FC<SearchBoxProps> = (props) => {
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
-    marginTop: theme.spacing * 4,
-    marginBottom: theme.spacing * 5,
+    paddingTop: theme.spacing * 4,
+    paddingBottom: theme.spacing * 5,
   },
   hiddenLabel: {
     position: "absolute",

@@ -14,14 +14,23 @@ import searchResults from "../../data/search.json";
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
-    alignSelf: "center",
+    fontFamily: "'Oswald', sans-serif",
+    color: theme.text.primary,
+  },
+  body: {
+    height: "100vh",
+    width: "100%",
+  },
+  content: {
+    height: "100%",
     width: theme.contentPercentage,
+    maxWidth: theme.maxContentWidth,
     marginLeft: "auto",
     marginRight: "auto",
-    maxWidth: theme.maxContentWidth,
+    paddingTop: theme.appBarHeight,
   },
   "@media (max-width: 768px)": {
-    root: {
+    content: {
       width: "100%",
       alignSelf: "center",
     },
@@ -35,14 +44,16 @@ const SearchContainer: React.FC<SearchContainerProps> = (props) => {
   const results = searchResults;
 
   return (
-    <>
+    <div className={classes.root}>
       <AppBar />
 
-      <div className={classes.root}>
-        <SearchBox query={term} />
-        <SearchResults results={results} />
+      <div className={classes.body}>
+        <div className={classes.content}>
+          <SearchBox query={term} />
+          <SearchResults results={results} />
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

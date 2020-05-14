@@ -10,8 +10,9 @@ const themeCreator = (): ChinTheme => {
 
   return {
     palette: {
-      primary: "#f5f5f5",
-      secondary: "#0fa093",
+      primary: "#000",
+      secondary: "#252525",
+      highlight: "#3eeab4",
       faded: "#D5D5D5",
     },
     text: {
@@ -19,15 +20,15 @@ const themeCreator = (): ChinTheme => {
       secondary: "#353535",
       faded: "#757575",
     },
-    spacing: 8,
-    appBarHeight: 80,
-    contentPercentage: "70%",
-    maxContentWidth: 1250,
     colors: {
       black: "#000000",
       gray: "#353535",
       lightGray: "#666",
     },
+    appBarHeight: 80,
+    spacing: 8,
+    contentPercentage: "70%",
+    maxContentWidth: 1250,
     transitions: {
       makeTransitions: makeTransition,
       defaultDuration: defaultDuration,
@@ -45,8 +46,8 @@ export const theme = themeCreator();
 export interface ChinTheme {
   palette: IPalette;
   text: IText;
-  spacing: number;
   appBarHeight: number;
+  spacing: number;
   contentPercentage: string;
   maxContentWidth: number;
   colors: IColors;
@@ -62,6 +63,7 @@ interface IText {
 interface IPalette {
   primary: string;
   secondary: string;
+  highlight: string;
   faded: string;
 }
 

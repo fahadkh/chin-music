@@ -1,20 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import { createUseStyles } from "react-jss";
 
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+
 import { ChinTheme } from "../application/Theme";
-import { mixinStyles } from "../application/Styles";
+import { mixinStyles, classNames } from "../application/Styles";
+
+const scrollLimit = -4;
+
+const AppBar: React.FC<AppBarProps> = (props) => {
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+
+  useScrollPosition(({ currPos }) => {
+    if (currPos.y <= scrollLimit && scrolledToTop) {
+      setScrolledToTop(false);
+    } else if (currPos.y > scrollLimit && !scrolledToTop) {
+      setScrolledToTop(true);
+    }
+  });
+
+  const classes: Record<string, string> = mixinStyles(useStyles, {
+    ...props,
+    main: props.main && scrolledToTop,
+  });
+
+  return (
+    <header className={classes.root}>
+      <div className={classes.content}>
+        <span className={classes.logo}>ChinMusic</span>
+        <span className={classNames(classes.logo, classes.logoSecondary)}>
+          Reviews
+        </span>
+      </div>
+    </header>
+  );
+};
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
     display: "flex",
     justifyContent: "center",
-    height: theme.appBarHeight,
+    height: (props: AppBarProps) => (props.main ? 120 : theme.appBarHeight),
     width: "100%",
-    position: (props: IAppBarProps) => (props.main ? "absolute" : "main"),
-    backgroundColor: (props: IAppBarProps) =>
-      props.main ? `${theme.colors.black}70` : `${theme.colors.black}`,
-    boxShadow: (props: IAppBarProps) =>
+    position: "fixed",
+    backgroundColor: (props: AppBarProps) =>
+      props.main ? "unset" : `${theme.palette.primary}`,
+    boxShadow: (props: AppBarProps) =>
       props.main ? "none" : "0 0 10px rgba(0,0,0,.3)",
+    transition: "background-color 0.5s, height 0.5s",
+    top: 0,
   },
   content: {
     display: "flex",
@@ -26,9 +60,14 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   logo: {
     alignSelf: "center",
     color: theme.text.primary,
-    fontSize: 45,
+    fontSize: 27,
     fontWeight: 500,
-    fontFamily: "Permanent Marker",
+    fontFamily: "'Oswald',sans-serif",
+    textTransform: "uppercase",
+    letterSpacing: 1,
+  },
+  logoSecondary: {
+    color: theme.palette.highlight,
   },
   "@media (max-width: 768px)": {
     content: {
@@ -36,22 +75,13 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
       marginLeft: theme.spacing * 2,
       marginRight: theme.spacing * 2,
     },
+    logoColored: {
+      visibility: "hidden",
+    },
   },
 }));
 
-const AppBar: React.FC<IAppBarProps> = (props) => {
-  const classes: Record<string, string> = mixinStyles(useStyles, props);
-
-  return (
-    <header className={classes.root}>
-      <div className={classes.content}>
-        <div className={classes.logo}>ChinMusic</div>
-      </div>
-    </header>
-  );
-};
-
-export interface IAppBarProps {
+export interface AppBarProps {
   classes?: Record<string, string>;
   main?: boolean;
 }
