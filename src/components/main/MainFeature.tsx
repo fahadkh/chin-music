@@ -56,6 +56,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   },
   title: {
     textTransform: "uppercase",
+    paddingRight: theme.spacing,
   },
   divider: {
     borderBottom: `2px solid ${theme.palette.highlight}`,
