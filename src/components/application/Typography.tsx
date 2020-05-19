@@ -44,11 +44,12 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
     },
     body: {
       ...themeStyling,
-      fontSize: 17,
+      fontSize: 16,
       lineHeight: 1.4,
       fontFamily: "Roboto, sans-serif",
       fontWeight: 500,
-      letterSpacing: ".006em",
+      letterSpacing: ".008em",
+      marginBlockStart: ".67em",
     },
     link: {
       ...themeStyling,

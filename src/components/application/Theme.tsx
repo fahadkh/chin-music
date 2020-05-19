@@ -16,7 +16,7 @@ const themeCreator = (): ChinTheme => {
       faded: "#D5D5D5",
     },
     text: {
-      primary: "#f5f5f5",
+      primary: "#FAFAFA",
       secondary: "#353535",
       faded: "#757575",
     },
@@ -27,8 +27,8 @@ const themeCreator = (): ChinTheme => {
     },
     appBarHeight: 80,
     spacing: 8,
-    contentPercentage: "70%",
-    maxContentWidth: 1400,
+    contentPercentage: "75%",
+    maxContentWidth: 1200,
     transitions: {
       makeTransitions: makeTransition,
       defaultDuration: defaultDuration,

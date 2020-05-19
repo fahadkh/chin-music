@@ -22,6 +22,8 @@ const MainFeature: React.FC<MainFeatureProps> = (props) => {
         </div>
 
         <div className={classes.featureContent}>
+          <div className={classes.repsonsiveSpacing}></div>
+
           <Body>{featuredArticle.caption}</Body>
           <div className={classes.linkContainer}>
             <Link url={`/article/${featuredArticle.id}`}>
@@ -61,7 +63,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     alignSelf: "center",
     flexWrap: "wrap",
     width: "100%",
-    maxWidth: 925,
+    maxWidth: 1000,
     paddingLeft: theme.spacing * 4,
     paddingRight: theme.spacing * 4,
   },
@@ -72,12 +74,15 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   },
   title: {
     textTransform: "uppercase",
-    paddingRight: theme.spacing,
+    paddingRight: theme.spacing * 3,
   },
   divider: {
     borderBottom: `2px solid ${theme.palette.highlight}`,
     maxWidth: 155,
     marginBottom: theme.spacing * 1.5,
+  },
+  repsonsiveSpacing: {
+    paddingTop: 0,
   },
   linkContainer: {
     paddingTop: theme.spacing * 2,
@@ -91,6 +96,9 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     },
     featureContent: {
       maxWidth: "unset",
+    },
+    repsonsiveSpacing: {
+      marginTop: theme.spacing * 4,
     },
   },
 }));
