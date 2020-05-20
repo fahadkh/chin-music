@@ -4,11 +4,8 @@ Project for learning some new tech for web dev. Hopefully will also actually be 
 
 ### Tech - Potential options
 
-Backend: Something with Clojure
-
+Backend: Clojure/lein/<WebServer>?
 Frontend: React/typescript
-
-Deploy: TravisCI? AWS/Heroku?
 
 Data Store: TBD (postgresql/elasticsearch)
 
