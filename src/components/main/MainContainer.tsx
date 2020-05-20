@@ -1,27 +1,16 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 
-import { ChinTheme } from "../application/Theme";
-
-import MainFeatureWrapper from "./MainFeatureWrapper";
-import MainFeature from "./MainFeature";
 import { mixinStyles } from "../application/Styles";
+import { ChinTheme } from "../application/Theme";
 import AppBar from "../application/AppBar";
 
-import { FeaturedArticle } from "./MainFeature";
+import ScrollIndicator from "../shared/ScrollIndicator";
+
+import MainFeatureWrapper from "./MainFeatureWrapper";
+import MainFeature, { FeaturedArticle } from "./MainFeature";
 
 import featured from "../../data/featured.json";
-
-const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-    fontFamily: "'Oswald', sans-serif",
-    color: theme.text.primary,
-  },
-  divider: {
-    backgroundColor: theme.palette.primary,
-    height: 40,
-  },
-}));
 
 const ContentDivider: React.FC = (props) => {
   const classes: Record<string, string> = useStyles();
@@ -41,6 +30,7 @@ const MainContainer: React.FC<MainContainerProps> = (props) => {
       <main>
         <MainFeatureWrapper imageLink={featuredArticle.image}>
           <MainFeature featuredArticle={featuredArticle} />
+          <ScrollIndicator text={"View More Posts"} size={18} />
         </MainFeatureWrapper>
 
         <ContentDivider />
@@ -48,6 +38,21 @@ const MainContainer: React.FC<MainContainerProps> = (props) => {
     </div>
   );
 };
+
+const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
+  root: {
+    fontFamily: "'Oswald', sans-serif",
+    color: theme.text.primary,
+  },
+  divider: {
+    backgroundColor: theme.palette.primary,
+    height: 40,
+  },
+  bottom: {
+    position: "absolute",
+    bottom: 10,
+  },
+}));
 
 export interface MainContainerProps {
   classes?: Record<string, string>;
