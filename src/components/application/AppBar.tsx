@@ -3,8 +3,9 @@ import { createUseStyles } from "react-jss";
 
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
-import { ChinTheme } from "../application/Theme";
-import { mixinStyles, classNames } from "../application/Styles";
+import { ChinTheme } from "./Theme";
+import { mediaQuery, Breakpoints } from "./Typography";
+import { mixinStyles, classNames } from "./Styles";
 
 const scrollLimit = -4;
 
@@ -70,7 +71,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   logoHighlighted: {
     color: theme.palette.highlight,
   },
-  "@media (max-width: 768px)": {
+  [mediaQuery(Breakpoints.small)]: {
     content: {
       width: "100%",
       marginLeft: theme.spacing * 2,
