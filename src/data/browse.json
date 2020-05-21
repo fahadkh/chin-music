@@ -1,0 +1,61 @@
+[
+  {
+    "id": "blondie-blondie-1976",
+    "title": "Blondie (1976)",
+    "artist": {
+      "id": "blondie",
+      "name": "Blondie"
+    },
+    "type": "review",
+    "author": {
+      "id": "phil-davis",
+      "name": "Phil Davis"
+    },
+    "caption": "Ushering us into some of the best hooks to grace CBGB, Blondie recalls the twisting fun of the 50s and early 60s but introduces the poppy keyboard sound that would so wonderfully and famously rock the following decade.",
+    "created": 1589417830,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Blondie1977.jpg"
+  },
+  {
+    "id": "the-commandos-commit-suicide-dance-concet-the-suicide-commandos-1979",
+    "title": "The Commandos Commit Suicide Dance Concert",
+    "artist": {
+      "id": "the-suicide-commandos",
+      "name": "The Suicide Commandos"
+    },
+    "type": "review",
+    "author": {
+      "id": "phil-davis",
+      "name": "Phil Davis"
+    },
+    "caption": "Transacting an appropriate amount of vocal clarity for ferocity, the Commandos are messy, spring-loaded, and charming.",
+    "created": 1589417830,
+    "image": "https://www.amoeba.com/sized-images/max/500/500/uploads/albums/covers/by_title/T/Commandos_CommitSuicideDance.jpg"
+  },
+  {
+    "id": "blondie-blondie-1976",
+    "title": "Blondie (1976)",
+    "artist": {
+      "id": "blondie",
+      "name": "Blondie"
+    },
+    "type": "blog",
+    "author": {
+      "id": "phil-davis",
+      "name": "Phil Davis"
+    },
+    "caption": "Ushering us into some of the best hooks to grace CBGB, Blondie recalls the twisting fun of the 50s and early 60s but introduces the poppy keyboard sound that would so wonderfully and famously rock the following decade.",
+    "created": 1589417830,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Blondie1977.jpg"
+  },
+  {
+    "id": "the-commandos-commit-suicide-dance-concet-the-suicide-commandos-1979",
+    "title": "The Commandos Commit Suicide Dance Concert",
+    "type": "review",
+    "author": {
+      "id": "phil-davis",
+      "name": "Phil Davis"
+    },
+    "caption": "Transacting an appropriate amount of vocal clarity for ferocity, the Commandos are messy, spring-loaded, and charming.",
+    "created": 1589417830
+  }
+]

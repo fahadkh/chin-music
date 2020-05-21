@@ -9,8 +9,11 @@ import ScrollIndicator from "../shared/ScrollIndicator";
 
 import MainFeatureWrapper from "./MainFeatureWrapper";
 import MainFeature, { FeaturedArticle } from "./MainFeature";
+import MainArticleList from "./MainArticleList";
+import { BrowseArticle } from "./MainArticleListItem";
 
 import featured from "../../data/featured.json";
+import browse from "../../data/browse.json";
 
 const ContentDivider: React.FC = (props) => {
   const classes: Record<string, string> = useStyles();
@@ -23,10 +26,12 @@ const MainContainer: React.FC<MainContainerProps> = (props) => {
 
   // TODO: Fetch featured gif, article, and recent article links
   const featuredArticle: FeaturedArticle = featured;
+  const browseList: BrowseArticle[] = browse;
 
   return (
     <div className={classes.root}>
       <AppBar main />
+
       <main>
         <MainFeatureWrapper imageLink={featuredArticle.image}>
           <MainFeature featuredArticle={featuredArticle} />
@@ -34,6 +39,8 @@ const MainContainer: React.FC<MainContainerProps> = (props) => {
         </MainFeatureWrapper>
 
         <ContentDivider />
+
+        <MainArticleList articles={browseList} />
       </main>
     </div>
   );
