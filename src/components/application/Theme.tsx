@@ -11,7 +11,7 @@ const themeCreator = (): ChinTheme => {
   return {
     palette: {
       primary: "#000",
-      secondary: "#252525",
+      secondary: "#151515",
       highlight: "#3eeab4",
       faded: "#D5D5D5",
     },

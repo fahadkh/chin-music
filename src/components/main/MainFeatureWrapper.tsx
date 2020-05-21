@@ -2,7 +2,7 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 
 import { ChinTheme } from "../application/Theme";
-import { mixinStyles } from "../application/Styles";
+import { mixinStyles, imageBackgroundStyle } from "../application/Styles";
 
 /**
  * Wraps the main feature with a full height/width container with background image.
@@ -23,9 +23,7 @@ const useStyles = createUseStyles<ChinTheme, string>({
     height: "100vh",
     width: "100%",
     background: (props: MainFeatureWrapperProps) =>
-      props.imageLink
-        ? `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${props.imageLink}) no-repeat center center fixed`
-        : "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://media.giphy.com/media/L0xAO5RZ5tqT7IUHZl/giphy.gif) no-repeat center center fixed",
+      imageBackgroundStyle(props.imageLink),
   },
   content: {
     display: "flex",

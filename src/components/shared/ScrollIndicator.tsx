@@ -70,7 +70,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
       props.size ? props.size - 2 : 16,
     position: "absolute",
     bottom: theme.spacing * 2,
-    transition: `opacity ${transitionDuration}s`,
+    transition: `opacity ${transitionDuration}s, color ${transitionDuration}s`,
     opacity: (props: ScrollIndicatorStyleProps) => (props.fading ? 0 : 1),
     visibility: (props: ScrollIndicatorStyleProps) =>
       props.visible ? "visible" : "hidden",
