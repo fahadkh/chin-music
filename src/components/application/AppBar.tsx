@@ -63,7 +63,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     color: theme.text.primary,
     fontSize: 27,
     fontWeight: 500,
-    fontFamily: "'Oswald',sans-serif",
+    fontFamily: "'Arimo',sans-serif",
     textTransform: "uppercase",
     letterSpacing: 1,
   },

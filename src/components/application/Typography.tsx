@@ -37,6 +37,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
   return {
     title: {
       ...themeStyling,
+      fontFamily: "'Arimo', sans-serif",
       fontSize: 38,
     },
     subTitle: {
@@ -46,7 +47,6 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
       ...themeStyling,
       fontSize: 16,
       lineHeight: 1.4,
-      fontFamily: "Roboto, sans-serif",
       fontWeight: 500,
       letterSpacing: ".008em",
       marginBlockStart: ".67em",

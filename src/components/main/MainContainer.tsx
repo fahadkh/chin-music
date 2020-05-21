@@ -41,7 +41,7 @@ const MainContainer: React.FC<MainContainerProps> = (props) => {
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
-    fontFamily: "'Oswald', sans-serif",
+    fontFamily: "'Nunito', sans-serif",
     color: theme.text.primary,
   },
   divider: {
