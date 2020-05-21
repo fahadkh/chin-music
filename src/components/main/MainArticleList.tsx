@@ -30,11 +30,8 @@ const MainArticleList: React.FC<MainArticleListProps> = (props) => {
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => {
   const tilesPerRow = 3;
-  const reflowBreakpoint = `@media (max-width: ${
-    Breakpoints.large + (tilesPerRow - 1) * 250
-  }px)`;
 
-  return {
+  const styles = {
     root: {
       backgroundColor: theme.palette.secondary,
       display: "flex",
@@ -65,13 +62,10 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
       height: 500,
       padding: theme.spacing * 2,
     },
-    [reflowBreakpoint]: {
-      item: {
-        width: `calc(${100 / Math.max(tilesPerRow - 1, 0)}% - ${
-          theme.spacing * 4
-        }px)`,
-      },
-    },
+  };
+
+  // Breakpoints for showing a single item per row and less
+  const baseBreakpoints = {
     [mediaQuery(Breakpoints.large)]: {
       item: {
         width: `calc(100% - ${theme.spacing * 4}px)`,
@@ -82,6 +76,38 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
         width: "unset",
       },
     },
+  };
+
+  let range;
+
+  range = Array.from(Array(tilesPerRow).keys()).slice(2);
+  range = range.reverse(); // We want to apply properties in order of biggest to smallest
+
+  // Breakpoints for reflowing the items per row as window shrinks
+  const additionalBreakpoints =
+    tilesPerRow <= 2
+      ? {}
+      : [...range].reduce((acc, val) => {
+          const reflowBreakpoint = `@media (max-width: ${
+            Breakpoints.large + (val - 1) * 450
+          }px)`;
+
+          return {
+            ...acc,
+            [reflowBreakpoint]: {
+              item: {
+                width: `calc(${100 / Math.max(val, 0)}% - ${
+                  theme.spacing * 4
+                }px)`,
+              },
+            },
+          };
+        }, {});
+
+  return {
+    ...styles,
+    ...additionalBreakpoints,
+    ...baseBreakpoints,
   };
 });
 
