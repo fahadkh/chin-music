@@ -3,7 +3,13 @@ import { createUseStyles } from "react-jss";
 
 import { ChinTheme } from "../application/Theme";
 
-import { Title, Body, Link } from "../application/Typography";
+import {
+  Title,
+  Body,
+  Link,
+  Breakpoints,
+  mediaQuery,
+} from "../application/Typography";
 
 const MainFeature: React.FC<MainFeatureProps> = (props) => {
   const classes = useStyles(props);
@@ -87,7 +93,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   linkContainer: {
     paddingTop: theme.spacing * 2,
   },
-  "@media (max-width: 768px)": {
+  [mediaQuery(Breakpoints.small)]: {
     root: {
       width: "100%",
       alignSelf: "center",

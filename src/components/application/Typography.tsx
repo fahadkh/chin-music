@@ -104,6 +104,14 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
   };
 });
 
+export const Breakpoints = {
+  large: 1050,
+  small: 768,
+};
+
+export const mediaQuery = (breakpoint: number) =>
+  `@media (max-width: ${breakpoint}px)`;
+
 export interface TitleProps {}
 export interface SubTitleProps {
   size?: number;
