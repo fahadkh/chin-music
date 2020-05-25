@@ -2,6 +2,7 @@ import React from "react";
 import { createUseStyles } from "react-jss";
 
 import { ChinTheme } from "../application/Theme";
+import Routes from "../application/Routes";
 
 import {
   Title,
@@ -32,7 +33,7 @@ const MainFeature: React.FC<MainFeatureProps> = (props) => {
 
           <Body>{featuredArticle.caption}</Body>
           <div className={classes.linkContainer}>
-            <Link url={`/article/${featuredArticle.id}`}>
+            <Link url={Routes.article.getPath(featuredArticle.id)}>
               {featureTypeToLinkLabel(featuredArticle.type)}
             </Link>
           </div>

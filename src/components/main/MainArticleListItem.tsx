@@ -4,6 +4,7 @@ import { createUseStyles } from "react-jss";
 import { mixinStyles, imageBackgroundStyle } from "../application/Styles";
 import { ChinTheme } from "../application/Theme";
 import { SubTitleLink, BodyLink, Body, Link } from "../application/Typography";
+import Routes from "../application/Routes";
 
 const MainArticleListItem: React.FC<MainArticleListItemProps> = (props) => {
   const classes: Record<string, string> = mixinStyles(useStyles, props);
@@ -14,14 +15,18 @@ const MainArticleListItem: React.FC<MainArticleListItemProps> = (props) => {
     <div className={classes.root}>
       <div className={classes.content}>
         <div className={classes.titleContainer}>
-          <SubTitleLink url={article.id}>{article.title}</SubTitleLink>
+          <SubTitleLink url={Routes.article.getPath(article.id)}>
+            {article.title}
+          </SubTitleLink>
         </div>
         {article.artist && (
-          <BodyLink url={article.artist.id}>{article.artist.name}</BodyLink>
+          <BodyLink url={Routes.artist.getPath(article.artist.id)}>
+            {article.artist.name}
+          </BodyLink>
         )}
         <div className={classes.divider} />
         <Body>{article.caption}</Body>
-        <Link url={article.id}> > Read More</Link>
+        <Link url={Routes.article.getPath(article.id)}> > Read More</Link>
       </div>
     </div>
   );
