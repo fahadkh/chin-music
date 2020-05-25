@@ -17,7 +17,7 @@ const MainArticleList: React.FC<MainArticleListProps> = (props) => {
       </div>
       <div className={classes.listContainer}>
         <ul className={classes.list}>
-          {props.articles.map((article, index) => (
+          {props.articles.map((article) => (
             <li key={article.id} className={classes.item}>
               <MainArticleListItem article={article} />
             </li>
