@@ -1,8 +1,6 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
 
-import i18n from "../../i18n/en-US/i18n.json";
-
 import { ChinTheme } from "../application/Theme";
 import { mixinStyles } from "../application/Styles";
 import { FaSearch as SearchIcon } from "react-icons/fa";
@@ -17,7 +15,7 @@ const MainContentSearch: React.FC<IMainContentSearchProps> = (props) => {
       <SearchIcon className={classes.searchIcon} />
 
       <label htmlFor={"main-search"} className={classes.hiddenLabel}>
-        {i18n.main.searchLabel}
+        Search reviews
       </label>
 
       <input
