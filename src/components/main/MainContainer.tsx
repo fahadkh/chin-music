@@ -6,20 +6,15 @@ import { ChinTheme } from "../application/Theme";
 import AppBar from "../application/AppBar";
 
 import ScrollIndicator from "../shared/ScrollIndicator";
+import ImageBackground from "../shared/ImageBackground";
+import ContentDivider from "../shared/ContentDivider";
 
-import MainFeatureWrapper from "./MainFeatureWrapper";
 import MainFeature, { FeaturedArticle } from "./MainFeature";
 import MainArticleList from "./MainArticleList";
 import { BrowseArticle } from "./MainArticleListItem";
 
 import featured from "../../data/featured.json";
 import browse from "../../data/browse.json";
-
-const ContentDivider: React.FC = (props) => {
-  const classes: Record<string, string> = useStyles();
-
-  return <div className={classes.divider}>{props.children}</div>;
-};
 
 const MainContainer: React.FC<MainContainerProps> = (props) => {
   const classes: Record<string, string> = mixinStyles(useStyles, props);
@@ -33,10 +28,10 @@ const MainContainer: React.FC<MainContainerProps> = (props) => {
       <AppBar main />
 
       <main>
-        <MainFeatureWrapper imageLink={featuredArticle.image}>
+        <ImageBackground fullHeight imageLink={featuredArticle.image}>
           <MainFeature featuredArticle={featuredArticle} />
           <ScrollIndicator text={"View More Posts"} size={18} />
-        </MainFeatureWrapper>
+        </ImageBackground>
 
         <ContentDivider />
 
@@ -50,10 +45,6 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
     fontFamily: "'Nunito', sans-serif",
     color: theme.text.primary,
-  },
-  divider: {
-    backgroundColor: theme.palette.primary,
-    height: 40,
   },
   bottom: {
     position: "absolute",

@@ -6,6 +6,9 @@ import { mixinStyles } from "../application/Styles";
 import { ChinTheme } from "../application/Theme";
 import AppBar from "../application/AppBar";
 
+import ImageBackground from "../shared/ImageBackground";
+import ContentDivider from "../shared/ContentDivider";
+
 const ArticleContainer = ({ match }: ArticleContainerProps) => {
   const classes: Record<string, string> = mixinStyles(useStyles, {});
 
@@ -15,7 +18,13 @@ const ArticleContainer = ({ match }: ArticleContainerProps) => {
     <div className={classes.root}>
       <AppBar main />
 
-      <main>Article for {articleId}</main>
+      <main>
+        <ImageBackground>
+          <div> Article for {articleId} </div>
+        </ImageBackground>
+
+        <ContentDivider />
+      </main>
     </div>
   );
 };
