@@ -5,10 +5,10 @@ import { ChinTheme } from "../application/Theme";
 import { mixinStyles, imageBackgroundStyle } from "../application/Styles";
 
 /**
- * Wraps the main feature with a full height/width container with background image.
+ * Wraps the child components with a full width, optionially full height container with background image.
  *
  */
-const MainFeatureWrapper: React.FC<MainFeatureWrapperProps> = (props) => {
+const ImageBackground: React.FC<ImageBackgroundProps> = (props) => {
   const classes: Record<string, string> = mixinStyles(useStyles, props);
 
   return (
@@ -20,9 +20,11 @@ const MainFeatureWrapper: React.FC<MainFeatureWrapperProps> = (props) => {
 
 const useStyles = createUseStyles<ChinTheme, string>({
   root: {
-    height: "100vh",
+    minHeight: 400,
+    height: (props: ImageBackgroundProps) =>
+      props.fullHeight ? "100vh" : "45vh",
     width: "100%",
-    background: (props: MainFeatureWrapperProps) =>
+    background: (props: ImageBackgroundProps) =>
       imageBackgroundStyle(props.imageLink),
   },
   content: {
@@ -33,9 +35,10 @@ const useStyles = createUseStyles<ChinTheme, string>({
   },
 });
 
-export interface MainFeatureWrapperProps {
+export interface ImageBackgroundProps {
   classes?: Record<string, string>;
   imageLink?: string;
+  fullHeight?: boolean;
 }
 
-export default MainFeatureWrapper;
+export default ImageBackground;
