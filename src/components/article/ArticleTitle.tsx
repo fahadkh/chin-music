@@ -33,7 +33,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignSelf: "center",
-    paddingTop: theme.spacing * 4,
+    paddingTop: theme.spacing * 8,
   },
   subTitle: {
     paddingTop: theme.spacing,

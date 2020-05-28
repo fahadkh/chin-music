@@ -22,7 +22,7 @@ const useStyles = createUseStyles<ChinTheme, string>({
   root: {
     minHeight: 400,
     height: (props: ImageBackgroundProps) =>
-      props.fullHeight ? "100vh" : "45vh",
+      props.fullHeight ? "100vh" : "55vh",
     width: "100%",
     background: (props: ImageBackgroundProps) =>
       imageBackgroundStyle(props.imageLink),
