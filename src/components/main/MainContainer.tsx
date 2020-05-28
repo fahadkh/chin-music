@@ -9,9 +9,10 @@ import ScrollIndicator from "../shared/ScrollIndicator";
 import ImageBackground from "../shared/ImageBackground";
 import ContentDivider from "../shared/ContentDivider";
 
-import MainFeature, { FeaturedArticle } from "./MainFeature";
+import { FeaturedArticle, BrowseArticle } from "../article/Types";
+
+import MainFeature from "./MainFeature";
 import MainArticleList from "./MainArticleList";
-import { BrowseArticle } from "./MainArticleListItem";
 
 import featured from "../../data/featured.json";
 import browse from "../../data/browse.json";

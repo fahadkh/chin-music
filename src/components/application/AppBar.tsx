@@ -5,7 +5,12 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 
 import { ChinTheme } from "./Theme";
 import { mediaQuery, Breakpoints } from "./Typography";
-import { mixinStyles, classNames } from "./Styles";
+import {
+  mixinStyles,
+  classNames,
+  containerStyles,
+  responsiveContainerStyles,
+} from "./Styles";
 
 const scrollLimit = -4;
 
@@ -52,12 +57,8 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
     top: 0,
   },
   content: {
-    display: "flex",
+    ...containerStyles(theme),
     alignSelf: "center",
-    width: theme.contentPercentage,
-    maxWidth: theme.maxContentWidth,
-    marginLeft: "auto",
-    marginRight: "auto",
   },
   logo: {
     alignSelf: "center",
@@ -73,9 +74,7 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   },
   [mediaQuery(Breakpoints.small)]: {
     content: {
-      width: "100%",
-      marginLeft: theme.spacing * 2,
-      marginRight: theme.spacing * 2,
+      ...responsiveContainerStyles(theme),
     },
     logoHighlighted: {
       visibility: "hidden",

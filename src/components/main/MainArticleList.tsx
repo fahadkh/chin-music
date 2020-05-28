@@ -5,7 +5,8 @@ import { mixinStyles } from "../application/Styles";
 import { ChinTheme } from "../application/Theme";
 import { SubTitle, Breakpoints, mediaQuery } from "../application/Typography";
 
-import MainArticleListItem, { BrowseArticle } from "./MainArticleListItem";
+import { BrowseArticle } from "../article/Types";
+import MainArticleListItem from "./MainArticleListItem";
 
 const MainArticleList: React.FC<MainArticleListProps> = (props) => {
   const classes: Record<string, string> = mixinStyles(useStyles, props);
@@ -74,6 +75,10 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => {
     [mediaQuery(Breakpoints.small)]: {
       listContainer: {
         width: "unset",
+      },
+      item: {
+        paddingLeft: theme.spacing * 3,
+        paddingRight: theme.spacing * 3,
       },
     },
   };

@@ -11,6 +11,12 @@ import {
   Breakpoints,
   mediaQuery,
 } from "../application/Typography";
+import {
+  containerStyles,
+  responsiveContainerStyles,
+} from "../application/Styles";
+
+import { FeaturedArticle } from "../article/Types";
 
 const MainFeature: React.FC<MainFeatureProps> = (props) => {
   const classes = useStyles(props);
@@ -58,12 +64,8 @@ const featureTypeToLinkLabel = (featureType: string) => {
 
 const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   root: {
-    display: "flex",
+    ...containerStyles(theme),
     justifyContent: "center",
-    width: theme.contentPercentage,
-    maxWidth: theme.maxContentWidth,
-    marginLeft: "auto",
-    marginRight: "auto",
   },
   featureContainer: {
     display: "flex",
@@ -96,10 +98,8 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   },
   [mediaQuery(Breakpoints.small)]: {
     root: {
-      width: "100%",
+      ...responsiveContainerStyles(theme),
       alignSelf: "center",
-      marginLeft: theme.spacing * 2,
-      marginRight: theme.spacing * 2,
     },
     featureContent: {
       maxWidth: "unset",
@@ -113,16 +113,6 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
 export interface MainFeatureProps {
   classes?: Record<string, string>;
   featuredArticle: FeaturedArticle;
-}
-
-export interface FeaturedArticle {
-  id: string;
-  title: string;
-  type: string;
-  author: string;
-  caption: string;
-  created: number;
-  image?: string;
 }
 
 export default MainFeature;

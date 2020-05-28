@@ -6,6 +6,8 @@ import { ChinTheme } from "../application/Theme";
 import { SubTitleLink, BodyLink, Body, Link } from "../application/Typography";
 import Routes from "../application/Routes";
 
+import { BrowseArticle } from "../article/Types";
+
 const MainArticleListItem: React.FC<MainArticleListItemProps> = (props) => {
   const classes: Record<string, string> = mixinStyles(useStyles, props);
 
@@ -63,27 +65,6 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
 export interface MainArticleListItemProps {
   classes?: Record<string, string>;
   article: BrowseArticle;
-}
-
-export interface BrowseArticle {
-  id: string;
-  title: string;
-  artist?: ArticleArtist;
-  type: string;
-  author: ArticleAuthor;
-  caption?: string;
-  created: number;
-  image?: string;
-}
-
-export interface ArticleArtist {
-  id: string;
-  name: string;
-}
-
-export interface ArticleAuthor {
-  id: string;
-  name: string;
 }
 
 export default MainArticleListItem;
