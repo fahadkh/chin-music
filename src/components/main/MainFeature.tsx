@@ -26,7 +26,7 @@ const MainFeature: React.FC<MainFeatureProps> = (props) => {
   return (
     <div className={classes.root}>
       <div className={classes.featureContainer}>
-        <div className={classNames(classes.featureContent, "fade-in")}>
+        <div className={classNames(classes.featureContent, classes.fadeIn)}>
           <div className={classes.title}>
             <Title>{featuredArticle.title}</Title>
           </div>
@@ -35,7 +35,9 @@ const MainFeature: React.FC<MainFeatureProps> = (props) => {
           <div>{`by ${featuredArticle.author}`}</div>
         </div>
 
-        <div className={classNames(classes.featureContent, "fade-in-delay")}>
+        <div
+          className={classNames(classes.featureContent, classes.fadeInDelay)}
+        >
           <div className={classes.repsonsiveSpacing}></div>
 
           <Body>{featuredArticle.caption}</Body>
@@ -96,6 +98,16 @@ const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
   },
   linkContainer: {
     paddingTop: theme.spacing * 2,
+  },
+  "@keyframes fadeIn": {
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+  },
+  fadeIn: {
+    animation: "$fadeIn linear 1.7s",
+  },
+  fadeInDelay: {
+    animation: "$fadeIn cubic-bezier(0.61, 0.01, 0.58, 0.58) 2.4s",
   },
   [mediaQuery(Breakpoints.small)]: {
     root: {
