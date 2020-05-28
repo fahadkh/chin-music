@@ -12,6 +12,7 @@ import {
   mediaQuery,
 } from "../application/Typography";
 import {
+  classNames,
   containerStyles,
   responsiveContainerStyles,
 } from "../application/Styles";
@@ -25,7 +26,7 @@ const MainFeature: React.FC<MainFeatureProps> = (props) => {
   return (
     <div className={classes.root}>
       <div className={classes.featureContainer}>
-        <div className={classes.featureContent}>
+        <div className={classNames(classes.featureContent, "fade-in")}>
           <div className={classes.title}>
             <Title>{featuredArticle.title}</Title>
           </div>
@@ -34,7 +35,7 @@ const MainFeature: React.FC<MainFeatureProps> = (props) => {
           <div>{`by ${featuredArticle.author}`}</div>
         </div>
 
-        <div className={classes.featureContent}>
+        <div className={classNames(classes.featureContent, "fade-in-delay")}>
           <div className={classes.repsonsiveSpacing}></div>
 
           <Body>{featuredArticle.caption}</Body>
