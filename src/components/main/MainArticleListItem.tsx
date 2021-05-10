@@ -1,69 +1,83 @@
 import React from "react";
-import { createUseStyles } from "react-jss";
 
-import { mixinStyles, imageBackgroundStyle } from "../application/Styles";
-import { ChinTheme } from "../application/Theme";
-import { SubTitleLink, BodyLink, Body, Link } from "../application/Typography";
+import styled from "styled-components";
+import {
+  Body,
+  BodyLink,
+  Link,
+  linkStyles,
+  LinkWrapper,
+  subTitleStyles,
+} from "styles/typography";
+
 import Routes from "../application/Routes";
-
+import { imageBackgroundStyle } from "../application/Styles";
 import { BrowseArticle } from "../article/Types";
 
-const MainArticleListItem: React.FC<MainArticleListItemProps> = (props) => {
-  const classes: Record<string, string> = mixinStyles(useStyles, props);
-
+const MainArticleListItem = (props: MainArticleListItemProps) => {
   const { article } = props;
 
   return (
-    <div className={classes.root}>
-      <div className={classes.content}>
-        <div className={classes.titleContainer}>
-          <SubTitleLink url={Routes.article.getPath(article.id)}>
+    <ImageContainer {...props}>
+      <ContentContainer>
+        <TitleContainer>
+          <SubTitleLink href={Routes.article.getPath(article.id)}>
             {article.title}
           </SubTitleLink>
-        </div>
+        </TitleContainer>
         {article.artist && (
-          <BodyLink url={Routes.artist.getPath(article.artist.id)}>
+          <BodyLink href={Routes.artist.getPath(article.artist.id)}>
             {article.artist.name}
           </BodyLink>
         )}
-        <div className={classes.divider} />
+        <Divider />
         <Body>{article.caption}</Body>
-        <Link url={Routes.article.getPath(article.id)}> > Read More</Link>
-      </div>
-    </div>
+        <Link href={Routes.article.getPath(article.id)}> {"> Read More"}</Link>
+      </ContentContainer>
+    </ImageContainer>
   );
 };
 
-const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-    display: "flex",
-    width: "100%",
-    height: "100%",
-    background: (props: MainArticleListItemProps) =>
-      imageBackgroundStyle(props.article.image, 0.65),
-  },
-  content: {
-    display: "flex",
-    flexDirection: "column",
-    alignSelf: "center",
-    paddingLeft: theme.spacing * 8,
-    paddingRight: theme.spacing * 8,
-    width: "100%",
-  },
-  titleContainer: {
-    textTransform: "uppercase",
-  },
-  divider: {
-    alignSelf: "center",
-    width: "20%",
-    paddingTop: theme.spacing,
-    marginBottom: theme.spacing * 2,
-    borderBottom: `2px solid ${theme.palette.highlight}`,
-  },
-}));
+const ImageContainer = styled.div<MainArticleListItemProps>`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: ${(props) => imageBackgroundStyle(props.article.image, 0.65)};
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-left: ${(props) => props.theme.spacing * 8}px;
+  padding-right: ${(props) => props.theme.spacing * 8}px;
+  width: 100%;
+`;
+
+const TitleContainer = styled.div`
+  text-transform: uppercase;
+`;
+
+const Divider = styled.div`
+  align-self: center;
+  width: 20%;
+  padding-top: ${(props) => props.theme.spacing}px;
+  margin-bottom: ${(props) => props.theme.spacing * 2}px;
+  border-bottom: ${(props) => `2px solid ${props.theme.palette.highlight}`};
+`;
+
+const SubTitleLink: React.FC<{ href: string }> = (props) => (
+  <LinkWrapper href={props.href}>
+    <LinkableSubTitle>{props.children}</LinkableSubTitle>
+  </LinkWrapper>
+);
+
+const LinkableSubTitle = styled.h2`
+  ${subTitleStyles(28)}
+  ${linkStyles}
+`;
 
 export interface MainArticleListItemProps {
-  classes?: Record<string, string>;
   article: BrowseArticle;
 }
 

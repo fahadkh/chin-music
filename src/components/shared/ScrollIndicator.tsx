@@ -1,12 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import { createUseStyles } from "react-jss";
-import { mixinStyles } from "../application/Styles";
-import { ChinTheme } from "../application/Theme";
+import React, { useEffect, useRef, useState } from "react";
 
-import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useScrollPosition } from "@n8tb1t/use-scroll-position";
+import styled from "styled-components";
 
 const transitionDuration = 0.5;
 
@@ -38,14 +35,8 @@ const ScrollIndicator: React.FC<ScrollIndicatorProps> = (props) => {
     }
   }, [preTrigger]);
 
-  const classes: Record<string, string> = mixinStyles(useStyles, {
-    visible: visible,
-    fading: !preTrigger,
-    size: props.size,
-  });
-
   return (
-    <div
+    <Container
       onClick={() =>
         indicatorRef.current
           ? indicatorRef.current.scrollIntoView({
@@ -55,48 +46,48 @@ const ScrollIndicator: React.FC<ScrollIndicatorProps> = (props) => {
           : {}
       }
       ref={indicatorRef}
-      className={classes.root}
+      visible={visible}
+      fading={!preTrigger}
+      size={props.size}
     >
-      <div className={classes.text}>{props.text}</div>
+      <Text size={props.size}>{props.text}</Text>
       <FontAwesomeIcon icon={faChevronDown} />
-    </div>
+    </Container>
   );
 };
 
-const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-    color: theme.text.primary,
-    fontSize: (props: ScrollIndicatorProps) =>
-      props.size ? props.size - 2 : 16,
-    position: "absolute",
-    bottom: theme.spacing * 2,
-    transition: `opacity ${transitionDuration}s, color ${transitionDuration}s`,
-    opacity: (props: ScrollIndicatorStyleProps) => (props.fading ? 0 : 1),
-    visibility: (props: ScrollIndicatorStyleProps) =>
-      props.visible ? "visible" : "hidden",
-    "&:hover": {
-      color: theme.palette.highlight,
-      cursor: "pointer",
-    },
+const Container = styled.div<ScrollIndicatorStyleProps>`
+  color: ${(props) => props.theme.text.primary};
+  font-size: ${(props) => (props.size ? props.size : 16)}px;
+  position: absolute;
+  bottom: ${(props) => props.theme.spacing * 2}px;
+  transition: opacity ${transitionDuration}s, color ${transitionDuration}s;
+  opacity: ${(props) => (props.fading ? 0 : 1)};
+  visibility: ${(props) => (props.visible ? "visible" : "hidden")};
+
+  &:hover {
+    color: ${(props) => props.theme.palette.highlight};
+    cursor: pointer;
   },
-  text: {
-    fontWeight: 500,
-    fontSize: (props: ScrollIndicatorProps) => props.size || 16,
-    paddingBottom: theme.spacing,
-  },
-}));
+`;
+
+const Text = styled.div<{ size?: number }>`
+  font-weight: 500;
+  font-size: ${(props) => props.size || 16}px;
+  padding-bottom: ${(props) => props.theme.spacing}px;
+`;
 
 export interface ScrollIndicatorProps {
   classes?: Record<string, string>;
-  trigger?: number;
   size?: number;
   text: string;
+  trigger?: number;
 }
 
 interface ScrollIndicatorStyleProps {
   fading: boolean;
+  size?: number;
   visible: boolean;
-  size: number;
 }
 
 export default ScrollIndicator;

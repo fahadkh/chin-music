@@ -1,123 +1,117 @@
 import React from "react";
-import { createUseStyles } from "react-jss";
 
-import { mixinStyles } from "../application/Styles";
-import { ChinTheme } from "../application/Theme";
-import { SubTitle, Breakpoints, mediaQuery } from "../application/Typography";
+import styled from "styled-components";
+import { Breakpoints, mediaQuery } from "styles/layout";
+import { ChinTheme } from "styles/theme";
+import { subTitleStyles } from "styles/typography";
 
 import { BrowseArticle } from "../article/Types";
 import MainArticleListItem from "./MainArticleListItem";
 
 const MainArticleList: React.FC<MainArticleListProps> = (props) => {
-  const classes: Record<string, string> = mixinStyles(useStyles, props);
-
   return (
-    <div className={classes.root}>
-      <div className={classes.subtitleContainer}>
-        <SubTitle size={38}>Latest Posts</SubTitle>
-      </div>
-      <div className={classes.listContainer}>
-        <ul className={classes.list}>
+    <Container>
+      <SubtitleContainer>
+        <SubTitle>Latest Posts</SubTitle>
+      </SubtitleContainer>
+      <ListContainer>
+        <ItemList>
           {props.articles.map((article) => (
-            <li key={article.id} className={classes.item}>
+            <Item key={article.id}>
               <MainArticleListItem article={article} />
-            </li>
+            </Item>
           ))}
-        </ul>
-      </div>
-    </div>
+        </ItemList>
+      </ListContainer>
+    </Container>
   );
 };
 
-const useStyles = createUseStyles<ChinTheme, string>((theme) => {
-  const tilesPerRow = 3;
+const TilesPerRow = 3;
 
-  const styles = {
-    root: {
-      backgroundColor: theme.palette.secondary,
-      display: "flex",
-      flexDirection: "column",
-      paddingTop: theme.spacing * 4,
-      paddingBottom: theme.spacing * 4,
-    },
-    subtitleContainer: {
-      paddingTop: theme.spacing * 3,
-      paddingBottom: theme.spacing * 3,
-      textTransform: "uppercase",
-    },
-    listContainer: {
-      alignSelf: "center",
-      width: `calc(${theme.contentPercentage} + ${theme.spacing * 4}px)`,
-      maxWidth: `calc(${theme.maxContentWidth}px + ${theme.spacing * 4}px)`,
-    },
-    list: {
-      display: "flex",
-      justifyContent: "space-between",
-      flexWrap: "wrap",
-      width: "100%",
-      listStyle: "none",
-      paddingInlineStart: "unset",
-    },
-    item: {
-      width: `calc(${100 / tilesPerRow}% - ${theme.spacing * 4}px)`,
-      height: 500,
-      padding: theme.spacing * 2,
-    },
-  };
+const Container = styled.div`
+  background-color: ${(props) => props.theme.palette.secondary};
+  display: flex;
+  flex-direction: column;
+  padding-top: ${(props) => props.theme.spacing * 4}px;
+  padding-bottom: ${(props) => props.theme.spacing * 4}px;
+`;
 
-  // Breakpoints for showing a single item per row and less
-  const baseBreakpoints = {
-    [mediaQuery(Breakpoints.large)]: {
-      item: {
-        width: `calc(100% - ${theme.spacing * 4}px)`,
-      },
-    },
-    [mediaQuery(Breakpoints.small)]: {
-      listContainer: {
-        width: "unset",
-      },
-      item: {
-        paddingLeft: theme.spacing * 3,
-        paddingRight: theme.spacing * 3,
-      },
-    },
-  };
+const SubtitleContainer = styled.div`
+  padding-top: ${(props) => props.theme.spacing * 3}px;
+  padding-bottom: ${(props) => props.theme.spacing * 3}px;
+  text-transform: uppercase;
+`;
 
+const ListContainer = styled.div`
+  align-self: center;
+  width: ${(props) =>
+    `calc(${props.theme.contentPercentage} + ${props.theme.spacing * 4}px)`};
+  max-width: ${(props) =>
+    `calc(${props.theme.maxContentWidth}px + ${props.theme.spacing * 4}px)`};
+
+  ${mediaQuery(Breakpoints.small)} {
+    width: 100%;
+  }
+`;
+
+const SubTitle = styled.h2`
+  ${subTitleStyles(38)}
+`;
+
+const ItemList = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style: none;
+  padding-inline-start: unset;
+`;
+
+const Item = styled.li`
+  width: ${(props) =>
+    `calc(${100 / TilesPerRow}% - ${props.theme.spacing * 4}px)`};
+  height: 500px;
+  padding: ${(props) => props.theme.spacing * 2}px;
+
+  ${(props) => additionalBreakpoints(props.theme)}
+
+  ${mediaQuery(Breakpoints.small)} {
+    padding-left: ${(props) => props.theme.spacing * 3}px;
+    padding-right: ${(props) => props.theme.spacing * 3}px;
+  }
+
+  ${mediaQuery(Breakpoints.large)} {
+    width: ${(props) => `calc(100% - ${props.theme.spacing * 4}px)`};
+  }
+`;
+
+// Breakpoints for reflowing the items per row as window shrinks
+const additionalBreakpoints = (theme: ChinTheme) => {
   let range;
 
-  range = Array.from(Array(tilesPerRow).keys()).slice(2);
+  range = Array.from(Array(TilesPerRow).keys()).slice(2);
   range = range.reverse(); // We want to apply properties in order of biggest to smallest
 
-  // Breakpoints for reflowing the items per row as window shrinks
-  const additionalBreakpoints =
-    tilesPerRow <= 2
-      ? {}
-      : [...range].reduce((acc, val) => {
+  const styles =
+    TilesPerRow <= 2
+      ? []
+      : [...range].map((val) => {
           const reflowBreakpoint = `@media (max-width: ${
             Breakpoints.large + (val - 1) * 450
           }px)`;
 
-          return {
-            ...acc,
-            [reflowBreakpoint]: {
-              item: {
-                width: `calc(${100 / Math.max(val, 0)}% - ${
-                  theme.spacing * 4
-                }px)`,
-              },
-            },
-          };
-        }, {});
+          return `
+            ${reflowBreakpoint} {
+              width: calc(${100 / Math.max(val, 0)}% - ${theme.spacing * 4}px)
+            }
+          `;
+        });
 
-  return {
-    ...styles,
-    ...additionalBreakpoints,
-    ...baseBreakpoints,
-  };
-});
+  return styles.join("/n");
+};
 
 export interface MainArticleListProps {
-  classes?: Record<string, string>;
   articles: BrowseArticle[];
 }
 

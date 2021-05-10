@@ -1,5 +1,7 @@
-const makePath = (path: string) => (id?: string): string =>
-  id ? path.replace(":id", id) : path;
+const makePath =
+  (path: string) =>
+  (id?: string): string =>
+    id ? path.replace(":id", id) : path;
 
 const Routes = {
   home: {

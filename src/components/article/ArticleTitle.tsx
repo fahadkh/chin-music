@@ -1,51 +1,50 @@
-import React from "react";
-import { createUseStyles } from "react-jss";
-
-import { mixinStyles, containerStyles } from "../application/Styles";
-import { ChinTheme } from "../application/Theme";
-import { Title, Body } from "../application/Typography";
+import styled from "styled-components";
+import { FullWidthContainer } from "styles/layout";
+import { Body, mainTitleStyles } from "styles/typography";
 
 import { Article as ArticleType } from "../article/Types";
 
 const ArticleTitle = (props: ArticleTitleProps) => {
-  const classes: Record<string, string> = mixinStyles(useStyles, props);
-
   return (
-    <div className={classes.root}>
-      <div className={classes.title}>
+    <Container>
+      <TitleContainer>
         <Title>{props.article.title}</Title>
-        <div className={classes.divider}></div>
-      </div>
-      <div className={classes.subTitle}>
+        <Divider />
+      </TitleContainer>
+      <SubTitleContainer>
         <Body>{props.article.subTitle}</Body>
-      </div>
-    </div>
+      </SubTitleContainer>
+    </Container>
   );
 };
 
-const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-    ...containerStyles(theme),
-    justifyContent: "center",
-    flexDirection: "column",
-  },
-  title: {
-    display: "flex",
-    flexDirection: "column",
-    alignSelf: "center",
-    paddingTop: theme.spacing * 8,
-  },
-  subTitle: {
-    paddingTop: theme.spacing,
-    alignSelf: "center",
-  },
-  divider: {
-    alignSelf: "center",
-    borderBottom: `2px solid ${theme.palette.highlight}`,
-    paddingTop: theme.spacing,
-    width: "15%",
-  },
-}));
+const Container = styled(FullWidthContainer)`
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-top: ${(props) => props.theme.spacing * 8}px;
+`;
+
+const Title = styled.h1`
+  ${mainTitleStyles}
+`;
+
+const Divider = styled.div`
+  align-self: center;
+  border-bottom: ${(props) => `2px solid ${props.theme.palette.highlight}`};
+  padding-top: ${(props) => props.theme.spacing};
+  width: 15%;
+`;
+
+const SubTitleContainer = styled.div`
+  padding-top: ${(props) => props.theme.spacing}px;
+  align-self: center;
+`;
 
 interface ArticleTitleProps {
   article: ArticleType;

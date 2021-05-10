@@ -1,54 +1,41 @@
 import React from "react";
-import { createUseStyles } from "react-jss";
 
-import { ChinTheme } from "../application/Theme";
-import Routes from "../application/Routes";
-
+import styled, { keyframes } from "styled-components";
 import {
-  Title,
-  Body,
-  Link,
   Breakpoints,
+  FullWidthResponsiveContainer,
   mediaQuery,
-} from "../application/Typography";
-import {
-  classNames,
-  containerStyles,
-  responsiveContainerStyles,
-} from "../application/Styles";
+} from "styles/layout";
+import { Body, Link, mainTitleStyles } from "styles/typography";
 
+import Routes from "../application/Routes";
 import { FeaturedArticle } from "../article/Types";
 
-const MainFeature: React.FC<MainFeatureProps> = (props) => {
-  const classes = useStyles(props);
+const MainFeature = (props: MainFeatureProps) => {
   const { featuredArticle } = props;
 
   return (
-    <div className={classes.root}>
-      <div className={classes.featureContainer}>
-        <div className={classNames(classes.featureContent, classes.fadeIn)}>
-          <div className={classes.title}>
-            <Title>{featuredArticle.title}</Title>
-          </div>
+    <Container>
+      <ContentContainer>
+        <FadeInContent>
+          <Title>{featuredArticle.title}</Title>
 
-          <div className={classes.divider} />
+          <Divider />
           <div>{`by ${featuredArticle.author}`}</div>
-        </div>
+        </FadeInContent>
 
-        <div
-          className={classNames(classes.featureContent, classes.fadeInDelay)}
-        >
-          <div className={classes.repsonsiveSpacing}></div>
+        <DelayedFadeInContent>
+          <ResponsiveSpacing />
 
           <Body>{featuredArticle.caption}</Body>
-          <div className={classes.linkContainer}>
-            <Link url={Routes.article.getPath(featuredArticle.id)}>
+          <LinkContainer>
+            <Link href={Routes.article.getPath(featuredArticle.id)}>
               {featureTypeToLinkLabel(featuredArticle.type)}
             </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+          </LinkContainer>
+        </DelayedFadeInContent>
+      </ContentContainer>
+    </Container>
   );
 };
 
@@ -65,66 +52,123 @@ const featureTypeToLinkLabel = (featureType: string) => {
   }
 };
 
-const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-    ...containerStyles(theme),
-    justifyContent: "center",
-  },
-  featureContainer: {
-    display: "flex",
-    alignSelf: "center",
-    flexWrap: "wrap",
-    width: "100%",
-    maxWidth: 1000,
-    paddingLeft: theme.spacing * 4,
-    paddingRight: theme.spacing * 4,
-  },
-  featureContent: {
-    textAlign: "left",
-    maxWidth: "50%",
-    flexGrow: 1,
-  },
-  title: {
-    textTransform: "uppercase",
-    paddingRight: theme.spacing * 3,
-  },
-  divider: {
-    borderBottom: `2px solid ${theme.palette.highlight}`,
-    maxWidth: 155,
-    marginBottom: theme.spacing * 1.5,
-  },
-  repsonsiveSpacing: {
-    paddingTop: 0,
-  },
-  linkContainer: {
-    paddingTop: theme.spacing * 2,
-  },
-  "@keyframes fadeIn": {
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-  },
-  fadeIn: {
-    animation: "$fadeIn linear 1.7s",
-  },
-  fadeInDelay: {
-    animation: "$fadeIn cubic-bezier(0.61, 0.01, 0.58, 0.58) 2.4s",
-  },
-  [mediaQuery(Breakpoints.small)]: {
-    root: {
-      ...responsiveContainerStyles(theme),
-      alignSelf: "center",
-    },
-    featureContent: {
-      maxWidth: "unset",
-    },
-    repsonsiveSpacing: {
-      marginTop: theme.spacing * 4,
-    },
-  },
-}));
+const Title = styled.h1`
+  ${mainTitleStyles}
+
+  text-transform: uppercase;
+  padding-right: ${(props) => props.theme.spacing * 3}px;
+`;
+
+const Container = styled(FullWidthResponsiveContainer)`
+  justify-content: center;
+
+  ${mediaQuery(Breakpoints.small)}: {
+    align-self: center;
+  }
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1000px;
+  padding-left: ${(props) => props.theme.spacing * 4}px;
+  padding-right: ${(props) => props.theme.spacing * 4}px;
+`;
+
+const LinkContainer = styled.div`
+  padding-top: ${(props) => props.theme.spacing * 2}px;
+`;
+
+const opacityKeyframes = keyframes`
+  from: { opacity: 0 };
+  to: { opacity: 1 };
+`;
+
+const FeatureContent = styled.div`
+  text-align: left;
+  max-width: 50%;
+  flex-grow: 1;
+
+  ${mediaQuery(Breakpoints.small)} {
+    max-width: unset;
+  }
+`;
+
+const FadeInContent = styled(FeatureContent)`
+  animation: ${opacityKeyframes} linear 1.7s;
+`;
+
+const DelayedFadeInContent = styled(FeatureContent)`
+  animation: ${opacityKeyframes} cubic-bezier(0.61, 0.01, 0.58, 0.58) 2.4s;
+`;
+
+const Divider = styled.div`
+  border-bottom: ${(props) => `2px solid ${props.theme.palette.highlight}`};
+  max-width: 155px;
+  margin-bottom: ${(props) => props.theme.spacing * 1.5}px;
+`;
+
+const ResponsiveSpacing = styled.div`
+  padding-top: 0px;
+`;
+
+// const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
+//   featureContainer: {
+//     display: "flex",
+//     alignSelf: "center",
+//     flexWrap: "wrap",
+//     width: "100%",
+//     maxWidth: 1000,
+//     paddingLeft: theme.spacing * 4,
+//     paddingRight: theme.spacing * 4,
+//   },
+//   featureContent: {
+//     textAlign: "left",
+//     maxWidth: "50%",
+//     flexGrow: 1,
+//   },
+// title: {
+//   textTransform: "uppercase",
+//   paddingRight: theme.spacing * 3,
+// },
+// divider: {
+//   borderBottom: `2px solid ${theme.palette.highlight}`,
+//   maxWidth: 155,
+//   marginBottom: theme.spacing * 1.5,
+// },
+// repsonsiveSpacing: {
+//   paddingTop: 0,
+// },
+// linkContainer: {
+//   paddingTop: theme.spacing * 2,
+// },
+// "@keyframes fadeIn": {
+//   from: { opacity: 0 },
+//   to: { opacity: 1 },
+// },
+// fadeIn: {
+//   animation: "$fadeIn linear 1.7s",
+// },
+// fadeInDelay: {
+//   animation: "$fadeIn cubic-bezier(0.61, 0.01, 0.58, 0.58) 2.4s",
+// },
+// [mediaQuery(Breakpoints.small)]: {
+//   root: {
+//     ...responsiveContainerStyles(theme),
+//     alignSelf: "center",
+//   },
+//   featureContent: {
+//     maxWidth: "unset",
+//   },
+//   repsonsiveSpacing: {
+//     marginTop: theme.spacing * 4,
+//   },
+//   },
+// }));
 
 export interface MainFeatureProps {
-  classes?: Record<string, string>;
   featuredArticle: FeaturedArticle;
 }
 

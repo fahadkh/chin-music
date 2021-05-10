@@ -1,29 +1,22 @@
-import React from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { createUseStyles } from "react-jss";
 
-import { mixinStyles } from "../application/Styles";
-import { ChinTheme } from "../application/Theme";
-import AppBar from "../application/AppBar";
-
-import ImageBackground from "../shared/ImageBackground";
-import ContentDivider from "../shared/ContentDivider";
-
-import { Article as ArticleType } from "./Types";
-import ArticleTitle from "./ArticleTitle";
-import ArticleContent from "./ArticleContent";
+import styled from "styled-components";
 
 import articleData from "../../data/article.json";
+import AppBar from "../application/AppBar";
+import ContentDivider from "../shared/ContentDivider";
+import ImageBackground from "../shared/ImageBackground";
+import ArticleContent from "./ArticleContent";
+import ArticleTitle from "./ArticleTitle";
+import { Article as ArticleType } from "./Types";
 
-const ArticleContainer = ({ match }: ArticleContainerProps) => {
-  const classes: Record<string, string> = mixinStyles(useStyles, {});
-
+const ArticleContainer = () => {
   // TODO: grab article from API
   // const articleId = match.params.id;
   const article: ArticleType = articleData;
 
   return (
-    <div className={classes.root}>
+    <Container>
       <AppBar main />
 
       <main>
@@ -35,19 +28,18 @@ const ArticleContainer = ({ match }: ArticleContainerProps) => {
 
         <ArticleContent content={article.content} />
       </main>
-    </div>
+    </Container>
   );
 };
 
-const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-    fontFamily: "'Nunito', sans-serif",
-    color: theme.text.primary,
-    textAlign: "left",
-  },
-}));
+const Container = styled.div`
+  color: ${(props) => props.theme.text.primary};
+  text-align: left;
+`;
 
-interface ArticleContainerProps
+// fontFamily: "'Nunito', sans-serif",
+
+export interface ArticleContainerProps
   extends RouteComponentProps<ArticleContainerParams> {}
 
 interface ArticleContainerParams {

@@ -4,7 +4,7 @@ const makeTransition = (transitions: string[], duration: string): string => {
     .join(", ");
 };
 
-const themeCreator = (): ChinTheme => {
+const themeCreator = () => {
   const defaultDuration = ".25s";
   const defaultTransitionList = ["border-color", "color"];
 
@@ -44,38 +44,38 @@ const themeCreator = (): ChinTheme => {
 export const theme = themeCreator();
 
 export interface ChinTheme {
-  palette: IPalette;
-  text: IText;
   appBarHeight: number;
-  spacing: number;
+  colors: Colors;
   contentPercentage: string;
   maxContentWidth: number;
-  colors: IColors;
-  transitions: ITransitions;
+  palette: Palette;
+  spacing: number;
+  text: Text;
+  transitions: Transitions;
 }
 
-interface IText {
-  primary: string;
-  secondary: string;
+type Text = {
   faded: string;
-}
-
-interface IPalette {
   primary: string;
   secondary: string;
+};
+
+type Palette = {
+  faded: string;
   highlight: string;
-  faded: string;
-}
+  primary: string;
+  secondary: string;
+};
 
-interface IColors {
+type Colors = {
   black: string;
   gray: string;
   lightGray: string;
-}
+};
 
-interface ITransitions {
-  makeTransitions: (transitions: string[], duration: string) => string;
+type Transitions = {
   defaultDuration: string;
   defaultTransitionList: string[];
   defaultTransitions: string;
-}
+  makeTransitions: (transitions: string[], duration: string) => string;
+};

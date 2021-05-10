@@ -1,31 +1,22 @@
-import React from "react";
-import { createUseStyles } from "react-jss";
+import styled from "styled-components";
 
-import { mixinStyles } from "../application/Styles";
-import { ChinTheme } from "../application/Theme";
-import AppBar from "../application/AppBar";
-
-import ScrollIndicator from "../shared/ScrollIndicator";
-import ImageBackground from "../shared/ImageBackground";
-import ContentDivider from "../shared/ContentDivider";
-
-import { FeaturedArticle, BrowseArticle } from "../article/Types";
-
-import MainFeature from "./MainFeature";
-import MainArticleList from "./MainArticleList";
-
-import featured from "../../data/featured.json";
 import browse from "../../data/browse.json";
+import featured from "../../data/featured.json";
+import AppBar from "../application/AppBar";
+import { BrowseArticle, FeaturedArticle } from "../article/Types";
+import ContentDivider from "../shared/ContentDivider";
+import ImageBackground from "../shared/ImageBackground";
+import ScrollIndicator from "../shared/ScrollIndicator";
+import MainArticleList from "./MainArticleList";
+import MainFeature from "./MainFeature";
 
-const MainContainer: React.FC<MainContainerProps> = (props) => {
-  const classes: Record<string, string> = mixinStyles(useStyles, props);
-
+const MainContainer = () => {
   // TODO: Fetch featured gif, article, and recent article links
   const featuredArticle: FeaturedArticle = featured;
   const browseList: BrowseArticle[] = browse;
 
   return (
-    <div className={classes.root}>
+    <Body>
       <AppBar main />
 
       <main>
@@ -38,23 +29,13 @@ const MainContainer: React.FC<MainContainerProps> = (props) => {
 
         <MainArticleList articles={browseList} />
       </main>
-    </div>
+    </Body>
   );
 };
 
-const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-    fontFamily: "'Nunito', sans-serif",
-    color: theme.text.primary,
-  },
-  bottom: {
-    position: "absolute",
-    bottom: 10,
-  },
-}));
-
-export interface MainContainerProps {
-  classes?: Record<string, string>;
-}
+const Body = styled.div`
+  font-family: Nunito, sans-serif;
+  color: ${(props) => props.theme.text.primary};
+`;
 
 export default MainContainer;

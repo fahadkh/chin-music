@@ -1,20 +1,17 @@
 import React, { useState } from "react";
-import { createUseStyles } from "react-jss";
 
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
-
-import { ChinTheme } from "./Theme";
-import { mediaQuery, Breakpoints } from "./Typography";
+import styled from "styled-components";
 import {
-  mixinStyles,
-  classNames,
+  Breakpoints,
   containerStyles,
+  mediaQuery,
   responsiveContainerStyles,
-} from "./Styles";
+} from "styles/layout";
 
 const scrollLimit = -4;
 
-const AppBar: React.FC<AppBarProps> = (props) => {
+const AppBar = (props: AppBarProps) => {
   const [scrolledToTop, setScrolledToTop] = useState(true);
 
   useScrollPosition(({ currPos }) => {
@@ -25,65 +22,57 @@ const AppBar: React.FC<AppBarProps> = (props) => {
     }
   });
 
-  const classes: Record<string, string> = mixinStyles(useStyles, {
-    ...props,
-    main: props.main && scrolledToTop,
-  });
-
   return (
-    <header className={classes.root}>
-      <div className={classes.content}>
-        <span className={classes.logo}>ChinMusic</span>
-        <span className={classNames(classes.logo, classes.logoHighlighted)}>
-          Reviews
-        </span>
-      </div>
-    </header>
+    <Header main={props.main && scrolledToTop}>
+      <LogoContainer>
+        <Logo>ChinMusic</Logo>
+        <HighlightedLogo>Reviews</HighlightedLogo>
+      </LogoContainer>
+    </Header>
   );
 };
 
-const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-  root: {
-    display: "flex",
-    justifyContent: "center",
-    height: (props: AppBarProps) => (props.main ? 120 : theme.appBarHeight),
-    width: "100%",
-    position: "fixed",
-    backgroundColor: (props: AppBarProps) =>
-      props.main ? "unset" : `${theme.palette.primary}`,
-    boxShadow: (props: AppBarProps) =>
-      props.main ? "none" : "0 0 10px rgba(0,0,0,.3)",
-    transition: "background-color 0.5s, height 0.5s",
-    top: 0,
-  },
-  content: {
-    ...containerStyles(theme),
-    alignSelf: "center",
-  },
-  logo: {
-    alignSelf: "center",
-    color: theme.text.primary,
-    fontSize: 27,
-    fontWeight: 500,
-    fontFamily: "'Arimo',sans-serif",
-    textTransform: "uppercase",
-    letterSpacing: 1,
-  },
-  logoHighlighted: {
-    color: theme.palette.highlight,
-  },
-  [mediaQuery(Breakpoints.small)]: {
-    content: {
-      ...responsiveContainerStyles(theme),
-    },
-    logoHighlighted: {
-      visibility: "hidden",
-    },
-  },
-}));
+const Header = styled.header<AppBarProps>`
+  display: flex;
+  justify-content: center;
+  height: ${(props) => (props.main ? 120 : props.theme.appBarHeight)}px;
+  width: 100%;
+  position: fixed;
+  background-color: ${(props) =>
+    props.main ? "unset" : props.theme.palette.primary};
+  box-shadow: ${(props) => (props.main ? "none" : "0 0 10px rgba(0,0,0,.3)")};
+  transition: background-color 0.5s, height 0.5s;
+  top: 0;
+`;
+
+const LogoContainer = styled.div`
+  ${containerStyles}
+  align-self: center;
+
+  ${mediaQuery(Breakpoints.small)} {
+    ${responsiveContainerStyles}
+  }
+`;
+
+const Logo = styled.span`
+  align-self: center;
+  color: ${(props) => props.theme.text.primary};
+  font-size: 27px;
+  font-weight: 500;
+  font-family: Arimo, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+
+const HighlightedLogo = styled(Logo)`
+  color: ${(props) => props.theme.palette.highlight};
+
+  ${mediaQuery(Breakpoints.small)} {
+    visibility: hidden;
+  }
+`;
 
 export interface AppBarProps {
-  classes?: Record<string, string>;
   main?: boolean;
 }
 
