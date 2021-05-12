@@ -1,6 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
+import { imageBackgroundStyle } from "styles/layout";
 import {
   Body,
   BodyLink,
@@ -10,8 +11,7 @@ import {
   subTitleStyles,
 } from "styles/typography";
 
-import Routes from "../application/Routes";
-import { imageBackgroundStyle } from "../application/Styles";
+import Routes from "../application/routeConfig";
 import { BrowseArticle } from "../article/Types";
 
 const MainArticleListItem = (props: MainArticleListItemProps) => {

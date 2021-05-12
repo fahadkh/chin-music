@@ -34,10 +34,9 @@ const ArticleContainer = () => {
 
 const Container = styled.div`
   color: ${(props) => props.theme.text.primary};
+  font-family: Nunito, sans-serif;
   text-align: left;
 `;
-
-// fontFamily: "'Nunito', sans-serif",
 
 export interface ArticleContainerProps
   extends RouteComponentProps<ArticleContainerParams> {}

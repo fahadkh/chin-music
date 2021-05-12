@@ -1,5 +1,3 @@
-import React from "react";
-
 import styled, { keyframes } from "styled-components";
 import {
   Breakpoints,
@@ -8,7 +6,7 @@ import {
 } from "styles/layout";
 import { Body, Link, mainTitleStyles } from "styles/typography";
 
-import Routes from "../application/Routes";
+import Routes from "../application/routeConfig";
 import { FeaturedArticle } from "../article/Types";
 
 const MainFeature = (props: MainFeatureProps) => {

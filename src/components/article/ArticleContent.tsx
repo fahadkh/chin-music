@@ -1,5 +1,3 @@
-import React from "react";
-
 import styled from "styled-components";
 import {
   Breakpoints,
@@ -37,32 +35,6 @@ const Content = styled.div`
     margin-block-end: 1.2em;
   };
 `;
-
-// const useStyles = createUseStyles((theme) => ({
-//   root: {
-//     ...containerStyles(theme),
-//     marginTop: theme.spacing * 2,
-//   },
-//   articleContent: {
-//     "& h2": {
-//       fontSize: 28,
-//       marginBlockStart: "2.5em",
-//       marginBlockEnd: "1.5em",
-//     },
-//     "& p": {
-//       fontSize: 18,
-//       lineHeight: "28px",
-//       marginBlockStart: "1.2em",
-//       marginBlockEnd: "1.2em",
-//     },
-//   },
-//   [mediaQuery(Breakpoints.small)]: {
-//     root: {
-//       ...responsiveContainerStyles(theme),
-//       width: "unset",
-//     },
-//   },
-// }));
 
 interface ArticleContentProps {
   content: string;

@@ -1,8 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-
-import { imageBackgroundStyle } from "../application/Styles";
+import { imageBackgroundStyle } from "styles/layout";
 
 /**
  * Wraps the child components with a full width, optionially full height container with background image.
