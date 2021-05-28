@@ -28,7 +28,7 @@ export const FullWidthContainer = styled.div`
 `;
 
 export const FullWidthResponsiveContainer = styled(FullWidthContainer)`
-  ${mediaQuery(Breakpoints.small)}: {
+  ${mediaQuery(Breakpoints.small)} {
     ${responsiveContainerStyles}
   }
 `;
