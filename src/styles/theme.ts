@@ -4,13 +4,22 @@ const makeTransition = (transitions: string[], duration: string): string => {
     .join(", ");
 };
 
-const themeCreator = () => {
+const makeSpacing = (multiplier?: number, ...otherMultipliers: number[]) => {
+  const spacing = 8;
+  const xOrDefault = multiplier !== undefined ? multiplier : 1;
+
+  return [xOrDefault, ...otherMultipliers.slice(0, 4)]
+    .map((multiplier) => (multiplier ? `${multiplier * spacing}px` : 0))
+    .join(" ");
+};
+
+const themeCreator = (): ChinTheme => {
   const defaultDuration = ".25s";
   const defaultTransitionList = ["border-color", "color"];
 
   return {
     palette: {
-      primary: "#000",
+      primary: "#000000",
       secondary: "#151515",
       highlight: "#3eeab4",
       faded: "#D5D5D5",
@@ -23,12 +32,12 @@ const themeCreator = () => {
     colors: {
       black: "#000000",
       gray: "#353535",
-      lightGray: "#666",
+      lightGray: "#666666",
     },
     appBarHeight: 80,
-    spacing: 8,
+    spacing: makeSpacing,
     contentPercentage: "75%",
-    maxContentWidth: 1200,
+    maxContentWidth: 1280,
     transitions: {
       makeTransitions: makeTransition,
       defaultDuration: defaultDuration,
@@ -49,7 +58,7 @@ export interface ChinTheme {
   contentPercentage: string;
   maxContentWidth: number;
   palette: Palette;
-  spacing: number;
+  spacing: (multiplier?: number, ...otherMultipliers: number[]) => string;
   text: Text;
   transitions: Transitions;
 }

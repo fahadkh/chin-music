@@ -13,6 +13,9 @@ const Routes = {
   artist: {
     getPath: makePath("/artist/:id"),
   },
+  login: {
+    getPath: makePath("/login"),
+  },
 };
 
 export default Routes;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { useScrollPosition } from "@n8tb1t/use-scroll-position";
 import styled from "styled-components";
@@ -8,6 +8,9 @@ import {
   mediaQuery,
   responsiveContainerStyles,
 } from "styles/layout";
+
+import Logo from "./Logo";
+import Profile from "./Profile";
 
 const scrollLimit = -4;
 
@@ -24,10 +27,10 @@ const AppBar = (props: AppBarProps) => {
 
   return (
     <Header main={props.main && scrolledToTop}>
-      <LogoContainer>
-        <Logo>ChinMusic</Logo>
-        <HighlightedLogo>Reviews</HighlightedLogo>
-      </LogoContainer>
+      <HeaderContentContainer>
+        <Logo />
+        <Profile />
+      </HeaderContentContainer>
     </Header>
   );
 };
@@ -43,32 +46,17 @@ const Header = styled.header<AppBarProps>`
   box-shadow: ${(props) => (props.main ? "none" : "0 0 10px rgba(0,0,0,.3)")};
   transition: background-color 0.5s, height 0.5s;
   top: 0;
+  background-image: ${(props) =>
+    `linear-gradient(${props.theme.palette.primary} 0 45%, rgba(0, 0, 0, 0))`};
 `;
 
-const LogoContainer = styled.div`
+const HeaderContentContainer = styled.div`
   ${containerStyles}
   align-self: center;
+  justify-content: space-between;
 
   ${mediaQuery(Breakpoints.small)} {
     ${responsiveContainerStyles}
-  }
-`;
-
-const Logo = styled.span`
-  align-self: center;
-  color: ${(props) => props.theme.text.primary};
-  font-size: 27px;
-  font-weight: 500;
-  font-family: Arimo, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-`;
-
-const HighlightedLogo = styled(Logo)`
-  color: ${(props) => props.theme.palette.highlight};
-
-  ${mediaQuery(Breakpoints.small)} {
-    visibility: hidden;
   }
 `;
 

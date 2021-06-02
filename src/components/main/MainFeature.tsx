@@ -1,3 +1,4 @@
+import Routes from "routes/routeConfig";
 import styled, { keyframes } from "styled-components";
 import {
   Breakpoints,
@@ -6,7 +7,6 @@ import {
 } from "styles/layout";
 import { Body, Link, mainTitleStyles } from "styles/typography";
 
-import Routes from "../application/routeConfig";
 import { FeaturedArticle } from "../article/Types";
 
 const MainFeature = (props: MainFeatureProps) => {
@@ -54,7 +54,7 @@ const Title = styled.h1`
   ${mainTitleStyles}
 
   text-transform: uppercase;
-  padding-right: ${(props) => props.theme.spacing * 3}px;
+  padding-right: ${(props) => props.theme.spacing(3)};
 `;
 
 const Container = styled(FullWidthResponsiveContainer)`
@@ -70,18 +70,20 @@ const ContentContainer = styled.div`
   align-self: center;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 1000px;
-  padding-left: ${(props) => props.theme.spacing * 4}px;
-  padding-right: ${(props) => props.theme.spacing * 4}px;
+
+  ${mediaQuery(Breakpoints.small)} {
+    padding-left: ${(props) => props.theme.spacing(4)};
+    padding-right: ${(props) => props.theme.spacing(4)};
+  }
 `;
 
 const LinkContainer = styled.div`
-  padding-top: ${(props) => props.theme.spacing * 2}px;
+  padding-top: ${(props) => props.theme.spacing(2)};
 `;
 
 const opacityKeyframes = keyframes`
-  from: { opacity: 0 };
-  to: { opacity: 1 };
+  from { opacity: 0 };
+  to { opacity: 1 };
 `;
 
 const FeatureContent = styled.div`
@@ -95,76 +97,22 @@ const FeatureContent = styled.div`
 `;
 
 const FadeInContent = styled(FeatureContent)`
-  animation: ${opacityKeyframes} linear 1.7s;
+  animation: ${opacityKeyframes} linear 1s;
 `;
 
 const DelayedFadeInContent = styled(FeatureContent)`
-  animation: ${opacityKeyframes} cubic-bezier(0.61, 0.01, 0.58, 0.58) 2.4s;
+  animation: ${opacityKeyframes} cubic-bezier(0.61, 0.01, 0.58, 0.58) 0.75s;
 `;
 
 const Divider = styled.div`
   border-bottom: ${(props) => `2px solid ${props.theme.palette.highlight}`};
   max-width: 155px;
-  margin-bottom: ${(props) => props.theme.spacing * 1.5}px;
+  margin-bottom: ${(props) => props.theme.spacing(1.5)};
 `;
 
 const ResponsiveSpacing = styled.div`
   padding-top: 0px;
 `;
-
-// const useStyles = createUseStyles<ChinTheme, string>((theme) => ({
-//   featureContainer: {
-//     display: "flex",
-//     alignSelf: "center",
-//     flexWrap: "wrap",
-//     width: "100%",
-//     maxWidth: 1000,
-//     paddingLeft: theme.spacing * 4,
-//     paddingRight: theme.spacing * 4,
-//   },
-//   featureContent: {
-//     textAlign: "left",
-//     maxWidth: "50%",
-//     flexGrow: 1,
-//   },
-// title: {
-//   textTransform: "uppercase",
-//   paddingRight: theme.spacing * 3,
-// },
-// divider: {
-//   borderBottom: `2px solid ${theme.palette.highlight}`,
-//   maxWidth: 155,
-//   marginBottom: theme.spacing * 1.5,
-// },
-// repsonsiveSpacing: {
-//   paddingTop: 0,
-// },
-// linkContainer: {
-//   paddingTop: theme.spacing * 2,
-// },
-// "@keyframes fadeIn": {
-//   from: { opacity: 0 },
-//   to: { opacity: 1 },
-// },
-// fadeIn: {
-//   animation: "$fadeIn linear 1.7s",
-// },
-// fadeInDelay: {
-//   animation: "$fadeIn cubic-bezier(0.61, 0.01, 0.58, 0.58) 2.4s",
-// },
-// [mediaQuery(Breakpoints.small)]: {
-//   root: {
-//     ...responsiveContainerStyles(theme),
-//     alignSelf: "center",
-//   },
-//   featureContent: {
-//     maxWidth: "unset",
-//   },
-//   repsonsiveSpacing: {
-//     marginTop: theme.spacing * 4,
-//   },
-//   },
-// }));
 
 export interface MainFeatureProps {
   featuredArticle: FeaturedArticle;

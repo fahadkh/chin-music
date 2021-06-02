@@ -1,4 +1,4 @@
-import { theme } from "../../../styles/theme";
+import { theme } from "../theme";
 
 const transitionList = ["margin", "border-radius"];
 const duration = "4s";

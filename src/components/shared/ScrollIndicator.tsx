@@ -60,7 +60,7 @@ const Container = styled.div<ScrollIndicatorStyleProps>`
   color: ${(props) => props.theme.text.primary};
   font-size: ${(props) => (props.size ? props.size : 16)}px;
   position: absolute;
-  bottom: ${(props) => props.theme.spacing * 2}px;
+  bottom: ${(props) => props.theme.spacing(2)};
   transition: opacity ${transitionDuration}s, color ${transitionDuration}s;
   opacity: ${(props) => (props.fading ? 0 : 1)};
   visibility: ${(props) => (props.visible ? "visible" : "hidden")};
@@ -74,7 +74,7 @@ const Container = styled.div<ScrollIndicatorStyleProps>`
 const Text = styled.div<{ size?: number }>`
   font-weight: 500;
   font-size: ${(props) => props.size || 16}px;
-  padding-bottom: ${(props) => props.theme.spacing}px;
+  padding-bottom: ${(props) => props.theme.spacing()};
 `;
 
 export interface ScrollIndicatorProps {

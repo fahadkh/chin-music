@@ -14,7 +14,7 @@ const ArticleContent = (props: ArticleContentProps) => {
 };
 
 const Container = styled(FullWidthResponsiveContainer)`
-  margin-top: ${(props) => props.theme.spacing * 2}px;
+  margin-top: ${(props) => props.theme.spacing(2)};
 
   ${mediaQuery(Breakpoints.small)} {
     width: unset;

@@ -3,8 +3,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const themeStyles = css`
-  margin-top: ${(props) => props.theme.spacing}px;
-  margin-bottom: ${(props) => props.theme.spacing}px;
+  margin-top: ${(props) => props.theme.spacing()};
+  margin-bottom: ${(props) => props.theme.spacing()};
   color: ${(props) => props.theme.text.primary};
 `;
 
@@ -13,6 +13,9 @@ export const mainTitleStyles = css`
 
   font-family: "Arimo", sans-serif;
   font-size: 38px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
 `;
 
 export const subTitleStyles = (size?: number) => css`
@@ -20,6 +23,8 @@ export const subTitleStyles = (size?: number) => css`
 
   font-family: "Arimo", sans-serif;
   font-size: ${size ? `${size}px` : "28px"};
+  font-weight: 600;
+  line-height: normal;
 `;
 
 export const Body = styled.p`
@@ -56,7 +61,10 @@ export const linkStyles = css`
 
 export const LinkWrapper: React.FC<LinkProps> = (props) => {
   return (
-    <a href={props.href} style={{ textDecoration: "unset" }}>
+    <a
+      href={props.href}
+      style={{ textDecoration: "unset", lineHeight: "normal" }}
+    >
       {props.children}
     </a>
   );

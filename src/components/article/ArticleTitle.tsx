@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FullWidthContainer } from "styles/layout";
+import { FullWidthResponsiveContainer } from "styles/layout";
 import { Body, mainTitleStyles } from "styles/typography";
 
 import { Article as ArticleType } from "../article/Types";
@@ -18,7 +18,7 @@ const ArticleTitle = (props: ArticleTitleProps) => {
   );
 };
 
-const Container = styled(FullWidthContainer)`
+const Container = styled(FullWidthResponsiveContainer)`
   justify-content: center;
   flex-direction: column;
 `;
@@ -27,7 +27,7 @@ const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  padding-top: ${(props) => props.theme.spacing * 8}px;
+  padding-top: ${(props) => props.theme.spacing(8)};
 `;
 
 const Title = styled.h1`
@@ -37,12 +37,12 @@ const Title = styled.h1`
 const Divider = styled.div`
   align-self: center;
   border-bottom: ${(props) => `2px solid ${props.theme.palette.highlight}`};
-  padding-top: ${(props) => props.theme.spacing};
+  padding-top: ${(props) => props.theme.spacing()};
   width: 15%;
 `;
 
 const SubTitleContainer = styled.div`
-  padding-top: ${(props) => props.theme.spacing}px;
+  padding-top: ${(props) => props.theme.spacing()};
   align-self: center;
 `;
 

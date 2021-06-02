@@ -17,8 +17,8 @@ export const containerStyles = css`
 `;
 
 export const responsiveContainerStyles = css`
-  margin-left: ${(props) => props.theme.spacing * 3}px;
-  margin-right: ${(props) => props.theme.spacing * 3}px;
+  margin-left: ${(props) => props.theme.spacing(3)};
+  margin-right: ${(props) => props.theme.spacing(3)};
   max-width: unset;
   width: 100%;
 `;
