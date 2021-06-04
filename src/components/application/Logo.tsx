@@ -5,17 +5,12 @@ import { Breakpoints, mediaQuery } from "styles/layout";
 
 const Logo = () => {
   return (
-    <Container to="/">
+    <NavLink className="flex" to="/">
       <MainLogo>ChinMusic</MainLogo>
       <HighlightedLogo>Reviews</HighlightedLogo>
-    </Container>
+    </NavLink>
   );
 };
-
-const Container = styled(NavLink)`
-  display: flex;
-  text-decoration: unset;
-`;
 
 const MainLogo = styled.span`
   align-self: center;

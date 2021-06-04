@@ -13,9 +13,9 @@ const MainArticleList: React.FC<MainArticleListProps> = (props) => {
         <SubTitle>Latest Posts</SubTitle>
       </div>
       <div className="flex self-center mx-6 mt-6 md:w-3/4 md:max-w-screen-xl">
-        <ul className="grid gap-x-6 gap-y-8 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 max-w-full">
+        <ul className="grid gap-10 grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 max-w-full">
           {props.articles.map((article) => (
-            <li className="md:h-auto max-w-full h-" key={article.id}>
+            <li className="md:h-auto max-w-full" key={article.id}>
               <MainArticleListItem article={article} />
             </li>
           ))}

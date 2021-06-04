@@ -18,7 +18,10 @@ const MainArticleListItem = (props: MainArticleListItemProps) => {
   const { article } = props;
 
   return (
-    <ImageContainer className="flex w-full h-full py-16 px-14" {...props}>
+    <ImageContainer
+      className="flex w-full h-full py-16 px-14 rounded-md shadow-md"
+      {...props}
+    >
       <div className="flex flex-col self-center w-full">
         <SubTitleLink href={Routes.article.getPath(article.id)}>
           {article.title}
@@ -37,7 +40,7 @@ const MainArticleListItem = (props: MainArticleListItemProps) => {
 };
 
 const ImageContainer = styled.div<MainArticleListItemProps>`
-  background: ${(props) => imageBackgroundStyle(props.article.image, 0.65)};
+  background: ${(props) => imageBackgroundStyle(props.article.image, 0.7)};
 `;
 
 const Divider = styled.div`
